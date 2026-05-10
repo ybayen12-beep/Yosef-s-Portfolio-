@@ -1,278 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yosef Bayen | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0a0a0f;
-      --bg2:#12121a;
-      --surface:rgba(255,255,255,.06);
-      --border:rgba(255,255,255,.10);
-      --text:#f5f7fb;
-      --muted:#bfc7d5;
-      --soft:#9aa3b2;
-      --pink:#ff006e;
-      --blue:#3a86ff;
-      --gold:#ffbe0b;
-      --max:1180px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:'Inter',sans-serif;background:radial-gradient(circle at top right, rgba(255,0,110,.15), transparent 25%), radial-gradient(circle at bottom left, rgba(58,134,255,.14), transparent 25%), linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);line-height:1.5}
-    a{color:inherit}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-    .hero{min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden}
-    .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.25;pointer-events:none}
-    .hero:before{width:340px;height:340px;right:-60px;top:40px;background:var(--pink)}
-    .hero:after{width:300px;height:300px;left:-40px;bottom:20px;background:var(--blue)}
-    .hero-grid{display:grid;grid-template-columns:1.25fr .95fr;gap:28px;align-items:center;width:100%}
-    h1,h2,h3{margin:0}
-    h1{font-family:'Instrument Serif',serif;font-size:clamp(3rem,7vw,6rem);line-height:.96;background:linear-gradient(135deg,var(--pink),var(--blue),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    h2{font-family:'Instrument Serif',serif;font-size:clamp(2rem,4vw,3.2rem);margin-bottom:16px}
-    h3{font-size:1.1rem;margin-bottom:8px}
-    .eyebrow{display:inline-block;padding:7px 12px;border:1px solid var(--border);background:var(--surface);border-radius:999px;font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:18px}
-    .lead{font-size:1.12rem;color:#e6ebf5;max-width:780px}
-    .sublead{color:var(--muted);max-width:720px;margin-top:14px}
-    .card{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:22px;backdrop-filter:blur(12px);box-shadow:0 10px 30px rgba(0,0,0,.18)}
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .stat{font-size:clamp(2rem,4vw,3.4rem);font-weight:900;line-height:1;color:#fff}
-    .muted{color:var(--muted)}
-    .soft{color:var(--soft);font-size:.92rem}
-    .section{padding:72px 0;border-top:1px solid rgba(255,255,255,.06)}
-    .project{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin-top:18px}
-    ul{margin:10px 0 0 18px;padding:0}
-    li{margin:8px 0;color:var(--muted)}
-    .bar{height:14px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:8px}
-    .fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--blue))}
-    .tag-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .tag{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--border);font-size:.9rem;color:var(--muted)}
-    .sticky-nav{position:sticky;top:0;z-index:20;background:rgba(10,10,15,.72);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav-inner{max-width:var(--max);margin:0 auto;padding:12px 24px;display:flex;gap:14px;flex-wrap:wrap}
-    .nav-inner a{text-decoration:none;color:var(--muted);font-size:.92rem}
-    .nav-inner a:hover{color:#fff}
-    @media (max-width: 900px){.hero-grid,.grid-4,.grid-3,.grid-2,.project{grid-template-columns:1fr}.hero{min-height:auto;padding:80px 0 50px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yosef Bayen | IT Project Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1e35;
+    --navy-mid: #1a2f4a;
+    --blue: #1d4ed8;
+    --blue-light: #3b82f6;
+    --accent: #f59e0b;
+    --cream: #faf8f4;
+    --text: #1a1a2e;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15, 30, 53, 0.97); backdrop-filter: blur(10px); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-name { font-family: 'DM Serif Display', serif; color: var(--white); font-size: 1.1rem; letter-spacing: 0.02em; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+  .hero { min-height: 100vh; background: var(--navy); display: flex; flex-direction: column; justify-content: center; padding: 7rem 2rem 4rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(29,78,216,0.15) 0%, transparent 70%); pointer-events: none; }
+  .hero::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%); pointer-events: none; }
+  .hero-inner { max-width: 900px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+  .hero-eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); }
+  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 8vw, 5.5rem); color: var(--white); line-height: 1.05; margin-bottom: 1.5rem; }
+  h1 em { color: var(--blue-light); font-style: italic; }
+  .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.65); max-width: 580px; line-height: 1.7; margin-bottom: 3rem; }
+  .hero-certs { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 3rem; }
+  .cert-tag { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); padding: 0.35rem 0.85rem; border-radius: 2px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em; }
+  .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); max-width: 640px; }
+  .stat { background: rgba(255,255,255,0.04); padding: 1.25rem 1.5rem; text-align: center; }
+  .stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--white); display: block; }
+  .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); letter-spacing: 0.05em; text-transform: uppercase; }
+  .hero-links { display: flex; gap: 1rem; margin-top: 2.5rem; }
+  .btn { padding: 0.75rem 1.75rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+  .btn-primary { background: var(--blue); color: var(--white); }
+  .btn-primary:hover { background: var(--blue-light); }
+  .btn-outline { background: transparent; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.2); }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; }
+  h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--navy); line-height: 1.2; margin-bottom: 3rem; }
+  #about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .about-block h3 { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+  .about-block p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.75rem; }
+  .strength-list { list-style: none; }
+  .strength-list li { padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; color: var(--text); display: flex; align-items: center; gap: 0.75rem; }
+  .strength-list li::before { content: ''; display: block; width: 6px; height: 6px; background: var(--blue); border-radius: 50%; flex-shrink: 0; }
+  #projects { background: var(--cream); }
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .project-card { background: var(--white); border: 1px solid var(--border); padding: 2rem; transition: box-shadow 0.2s, transform 0.2s; position: relative; overflow: hidden; }
+  .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--blue); }
+  .project-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
+  .project-role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; }
+  .project-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 0.25rem; }
+  .project-dates { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+  .project-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
+  .impact-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .impact-list li { font-size: 0.83rem; color: var(--text); display: flex; align-items: flex-start; gap: 0.6rem; }
+  .impact-list li::before { content: '↑'; color: var(--blue); font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; }
+  #tools { background: var(--navy); }
+  #tools h2 { color: var(--white); }
+  #tools .section-label { color: var(--accent); }
+  .tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .tools-block h3 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .tools-block ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .tools-block li { font-size: 0.88rem; color: rgba(255,255,255,0.7); }
+  #value { background: var(--white); }
+  .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .value-card { border: 1px solid var(--border); padding: 2rem; position: relative; }
+  .value-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--accent)); }
+  .value-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 0.75rem; }
+  .value-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+  #contact { background: var(--navy); text-align: center; padding: 5rem 2rem; }
+  #contact h2 { color: var(--white); margin-bottom: 1rem; }
+  #contact p { color: rgba(255,255,255,0.55); margin-bottom: 2.5rem; font-size: 0.95rem; }
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .contact-link { padding: 0.75rem 1.75rem; font-size: 0.83rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
+  .contact-link.primary { background: var(--blue); color: var(--white); }
+  .contact-link.primary:hover { background: var(--blue-light); }
+  .contact-link.secondary { border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); }
+  .contact-link.secondary:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+  footer { background: #080f1a; padding: 1.5rem 2rem; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+  @media (max-width: 700px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } .about-grid, .projects-grid, .tools-grid, .value-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
 </head>
 <body>
-  <nav class="sticky-nav">
-    <div class="nav-inner">
-      <a href="#about">About</a>
-      <a href="#performance">Performance</a>
-      <a href="#projects">Projects</a>
-      <a href="#tools">Tools</a>
-      <a href="#value">Value</a>
+<nav>
+  <span class="nav-name">Yosef Bayen</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#value">Value</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">IT Project Manager</div>
+    <h1>Yosef<br><em>Bayen</em></h1>
+    <p class="hero-sub">Building structure where there isn't any. Driving delivery across software, operations, and infrastructure without always having formal authority. PMP certified. Agile-first. Execution-obsessed.</p>
+    <div class="hero-certs">
+      <span class="cert-tag">PMP</span>
+      <span class="cert-tag">CAPM</span>
+      <span class="cert-tag">AWS Cloud Practitioner</span>
+      <span class="cert-tag">Google PM Certificate</span>
     </div>
-  </nav>
-
-  <header class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">Project Manager Portfolio</div>
-        <h1>Yosef Bayen</h1>
-        <p class="lead">Project Manager in the iGaming domain focused on automation, operations scaling, and cross-functional delivery across 8+ stakeholders.</p>
-        <p class="sublead">Known for bringing structure to ambiguous work, improving operational efficiency, and stepping into leadership gaps without formal authority.</p>
-        <div class="tag-row">
-          <span class="tag">PMP — Aug 2025</span>
-          <span class="tag">CAPM — Feb 2025</span>
-          <span class="tag">AWS CCP — Oct 2025</span>
-          <span class="tag">Google PM</span>
-        </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Years PM</span></div>
+      <div class="stat"><span class="stat-num">8–12</span><span class="stat-label">Stakeholders</span></div>
+      <div class="stat"><span class="stat-num">6</span><span class="stat-label">Projects</span></div>
+      <div class="stat"><span class="stat-num">~20%</span><span class="stat-label">Avg Improvement</span></div>
+    </div>
+    <div class="hero-links">
+      <a href="https://www.linkedin.com/in/yosef-bayen-pmp-3b3341198/" target="_blank" class="btn btn-primary">LinkedIn</a>
+      <a href="mailto:ybayen12@gmail.com" class="btn btn-outline">Get In Touch</a>
+    </div>
+  </div>
+</section>
+<section id="about">
+  <div class="section-inner fade-in">
+    <div class="section-label">Profile</div>
+    <h2>Credentials &amp; Focus</h2>
+    <div class="about-grid">
+      <div class="about-block">
+        <h3>Focus Areas</h3>
+        <p>Sprint execution, application delivery, service desk ownership, and operational process improvement across software and IT teams.</p>
+        <p>Experienced across development, automation, operations, QA, and vendor-facing coordination — typically owning delivery across 8–12 stakeholders per initiative.</p>
+        <p>Currently at Games Global managing end-to-end delivery, running Agile ceremonies, and owning a service desk platform that handles ad-hoc, hotswap, and monthly capacity planning.</p>
       </div>
-      <div class="card">
-        <div class="grid-2">
-          <div>
-            <div class="stat">8+</div>
-            <div class="soft">Stakeholders per initiative</div>
-          </div>
-          <div>
-            <div class="stat">6</div>
-            <div class="soft">Portfolio projects</div>
-          </div>
-          <div>
-            <div class="stat">15–25%</div>
-            <div class="soft">Typical improvement range</div>
-          </div>
-          <div>
-            <div class="stat">2023–2026</div>
-            <div class="soft">Leadership stretch period</div>
-          </div>
-        </div>
+      <div class="about-block">
+        <h3>Core Strengths</h3>
+        <ul class="strength-list">
+          <li>Agile and Waterfall project management</li>
+          <li>Cross-functional delivery across technical teams</li>
+          <li>Service desk ownership and workload capacity planning</li>
+          <li>Process mapping and workflow optimization</li>
+          <li>Jira and Outlook automation builds</li>
+          <li>Executive communication and KPI reporting</li>
+          <li>Stepping into leadership gaps without formal authority</li>
+        </ul>
       </div>
     </div>
-  </header>
-
-  <main>
-    <section class="section" id="about">
-      <div class="wrap">
-        <div class="eyebrow">About</div>
-        <h2>Profile and credentials</h2>
-        <div class="grid-2">
-          <div class="card">
-            <h3>Focus areas</h3>
-            <p class="muted">Automation, sprint execution, rollout delivery, stakeholder communication, and operational process improvement in iGaming teams.</p>
-            <p class="muted">Experience working across development, automation, operations, and vendor-facing coordination.</p>
-          </div>
-          <div class="card">
-            <h3>Core strengths</h3>
-            <ul>
-              <li>Agile and Waterfall project management.</li>
-              <li>Cross-functional delivery across technical teams.</li>
-              <li>Process mapping and workflow optimization.</li>
-              <li>Operational scaling and service design.</li>
-            </ul>
-          </div>
-        </div>
+  </div>
+</section>
+<section id="projects">
+  <div class="section-inner fade-in">
+    <div class="section-label">Work</div>
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-role">Acting Project Manager</div>
+        <h3>V92 Jackpot Rollout</h3>
+        <div class="project-dates">2025–2026</div>
+        <p class="project-desc">Delivered a structured cross-functional rollout across development, automation, operations, and vendor stakeholders using Jira, Confluence, Microsoft Project, and Excel.</p>
+        <ul class="impact-list">
+          <li>Better rollout visibility across all workstreams</li>
+          <li>Fewer last-minute scope and date changes</li>
+          <li>Faster planning cycles for future releases</li>
+          <li>8–12 stakeholders coordinated end-to-end</li>
+        </ul>
       </div>
-    </section>
-
-    <section class="section" id="performance">
-      <div class="wrap">
-        <div class="eyebrow">Performance</div>
-        <h2>MBO performance snapshot</h2>
-        <div class="grid-3">
-          <div class="card"><div class="stat">83%</div><div>Software Delivery</div><div class="soft">On Track.</div><div class="bar"><div class="fill" style="width:83%"></div></div></div>
-          <div class="card"><div class="stat">75%</div><div>Planning & Organization</div><div class="soft">On Track.</div><div class="bar"><div class="fill" style="width:75%"></div></div></div>
-          <div class="card"><div class="stat">67%</div><div>Operational Efficiencies</div><div class="soft">On Track.</div><div class="bar"><div class="fill" style="width:67%"></div></div></div>
-        </div>
+      <div class="project-card">
+        <div class="project-role">Sprint Lead / Acting PM</div>
+        <h3>Game Automation Sprint Management</h3>
+        <div class="project-dates">2025–2026</div>
+        <p class="project-desc">Introduced formal sprint management across planning, tracking, scheduling, and backlog prioritization for the Game Automation team from scratch.</p>
+        <ul class="impact-list">
+          <li>~20% higher delivery predictability</li>
+          <li>Meaningful increase in on-time task completion</li>
+          <li>Significantly fewer ad-hoc status requests</li>
+          <li>Supported 5–8 person team across 8+ stakeholders</li>
+        </ul>
       </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="wrap">
-        <div class="eyebrow">Projects</div>
-        <h2>Featured work</h2>
-
-        <div class="project">
-          <div class="card">
-            <h3>V92 Jackpot Rollout</h3>
-            <p class="soft">Acting Project Manager · 2025–2026</p>
-            <p class="muted">Delivered a structured rollout across development, automation, operations, and vendor stakeholders using Jira, Confluence, Microsoft Project, Teams, and Excel.</p>
-          </div>
-          <div class="card">
-            <h3>Impact</h3>
-            <ul>
-              <li>~20% better rollout visibility.</li>
-              <li>~15–20% fewer last-minute scope and date changes.</li>
-              <li>~25% faster planning for future release rollouts.</li>
-              <li>8–12 stakeholders coordinated.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="card">
-            <h3>Game Automation Sprint Management</h3>
-            <p class="soft">Sprint Lead / Acting Project Manager · 2025–2026</p>
-            <p class="muted">Introduced formal sprint management across planning, tracking, scheduling, follow-ups, and backlog prioritization for the Game Automation team.</p>
-          </div>
-          <div class="card">
-            <h3>Impact</h3>
-            <ul>
-              <li>~20% higher delivery predictability.</li>
-              <li>~15–20% increase in on-time task completion.</li>
-              <li>~25% fewer ad-hoc status requests.</li>
-              <li>Supported a 5–8 person team and 8+ stakeholders.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="card">
-            <h3>Service Desk Implementation</h3>
-            <p class="soft">Project Coordinator · 2025–2026</p>
-            <p class="muted">Designed intake workflow for ad-hoc, hot-seat, and unplanned work using ticketing systems, Sheets, and calendar-based visibility.</p>
-          </div>
-          <div class="card">
-            <h3>Impact</h3>
-            <ul>
-              <li>~25% more workload visibility.</li>
-              <li>~15–20% fewer missed or delayed requests.</li>
-              <li>~20% smoother resource distribution.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="card">
-            <h3>Game Update Process Optimization</h3>
-            <p class="soft">Process Owner (Unofficial) · 2024–2025</p>
-            <p class="muted">Mapped workflow, removed bottlenecks, added tracking and documentation, and managed GameFlex transitions.</p>
-          </div>
-          <div class="card">
-            <h3>Impact</h3>
-            <ul>
-              <li>~15–20% faster cycle time.</li>
-              <li>~20–25% less rework and handoff friction.</li>
-              <li>~15–20% fewer last-minute escalations.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="card">
-            <h3>GAO Tracking & Cross-Team Coordination</h3>
-            <p class="soft">Project Coordinator / Team Lead (Unofficial) · 2024–2025</p>
-            <p class="muted">Centralized data in tracking sheets and boards to improve visibility and reporting across departments.</p>
-          </div>
-          <div class="card">
-            <h3>Impact</h3>
-            <ul>
-              <li>~20–25% lower miscommunication and delays.</li>
-              <li>~15–20% fewer ad-hoc information checks.</li>
-              <li>Maintained data quality across 8+ stakeholder groups.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="card">
-            <h3>Team Leadership During PM Gap</h3>
-            <p class="soft">Acting Team Lead / Decision Maker · 2023–2025</p>
-            <p class="muted">Owned prioritization, risk management, and communication after PM departure to preserve team continuity.</p>
-          </div>
-          <div class="card">
-            <h3>Impact</h3>
-            <ul>
-              <li>Maintained delivery continuity within ~15–20% of previous throughput baseline.</li>
-              <li>Reduced escalation burden through reliable day-to-day ownership.</li>
-              <li>Built trust with peers and management.</li>
-            </ul>
-          </div>
-        </div>
+      <div class="project-card">
+        <div class="project-role">Platform Owner</div>
+        <h3>Service Desk Ownership &amp; Capacity Planning</h3>
+        <div class="project-dates">2025–Present</div>
+        <p class="project-desc">Designed, implemented, and continue to own and manage the service desk platform. Oversees hotswap and ad-hoc request intake, triage, and forward-looking monthly capacity planning across the team.</p>
+        <ul class="impact-list">
+          <li>Improved workload visibility across all incoming requests</li>
+          <li>Reduced missed and delayed requests meaningfully</li>
+          <li>Smoother month-over-month resource distribution</li>
+          <li>Single owner for intake, triage, and capacity cycles</li>
+        </ul>
       </div>
-    </section>
-
-    <section class="section" id="tools">
-      <div class="wrap">
-        <div class="eyebrow">Tools</div>
-        <h2>Methods and tools used</h2>
-        <div class="grid-4">
-          <div class="card"><h3>Planning</h3><p class="muted">Jira, Microsoft Project, Confluence.</p></div>
-          <div class="card"><h3>Reporting</h3><p class="muted">Excel, Google Sheets, dashboards, stakeholder summaries.</p></div>
-          <div class="card"><h3>Collaboration</h3><p class="muted">Microsoft Teams, Google Workspace, cross-functional updates.</p></div>
-          <div class="card"><h3>Operations</h3><p class="muted">Service desk and ticketing systems, process mapping, workflow design.</p></div>
-        </div>
+      <div class="project-card">
+        <div class="project-role">Process Owner</div>
+        <h3>Game Update Process Optimization</h3>
+        <div class="project-dates">2024–2025</div>
+        <p class="project-desc">Mapped existing workflow, removed bottlenecks, added tracking and documentation, and managed GameFlex transitions end-to-end.</p>
+        <ul class="impact-list">
+          <li>Faster cycle times across game update pipeline</li>
+          <li>Less rework and handoff friction</li>
+          <li>Fewer last-minute escalations to leadership</li>
+        </ul>
       </div>
-    </section>
-
-    <section class="section" id="value">
-      <div class="wrap">
-        <div class="eyebrow">Value</div>
-        <h2>What I bring</h2>
-        <div class="grid-3">
-          <div class="card"><div class="stat">Agile</div><div class="soft">Sprint planning, ceremonies, backlog structure, delivery tracking.</div></div>
-          <div class="card"><div class="stat">Ops</div><div class="soft">Service design, workflow scaling, efficiency improvement, reporting discipline.</div></div>
-          <div class="card"><div class="stat">Cross-team</div><div class="soft">8+ stakeholders, technical and business alignment, calm execution under ambiguity.</div></div>
-        </div>
+      <div class="project-card">
+        <div class="project-role">Project Coordinator / Team Lead</div>
+        <h3>GAO Tracking &amp; Cross-Team Coordination</h3>
+        <div class="project-dates">2024–2025</div>
+        <p class="project-desc">Centralized data in tracking sheets and boards to improve cross-departmental visibility, reduce miscommunication, and standardize reporting across stakeholder groups.</p>
+        <ul class="impact-list">
+          <li>Lower miscommunication and delays across teams</li>
+          <li>Fewer ad-hoc information check-ins</li>
+          <li>Maintained data quality across 8+ stakeholder groups</li>
+        </ul>
       </div>
-    </section>
-  </main>
+      <div class="project-card">
+        <div class="project-role">Acting Team Lead</div>
+        <h3>Team Leadership During PM Gap</h3>
+        <div class="project-dates">2023–2025</div>
+        <p class="project-desc">Stepped up after PM departure to own prioritization, risk management, and stakeholder communication — preserving delivery continuity through ambiguous organizational transition.</p>
+        <ul class="impact-list">
+          <li>Maintained delivery continuity without missing a beat</li>
+          <li>Reduced escalation burden through consistent ownership</li>
+          <li>Built trust with peers and leadership during uncertainty</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="tools">
+  <div class="section-inner fade-in">
+    <div class="section-label">Stack</div>
+    <h2>Methods &amp; Tools</h2>
+    <div class="tools-grid">
+      <div class="tools-block"><h3>Delivery</h3><ul><li>Agile / Scrum</li><li>Waterfall</li><li>Hybrid</li><li>Full SDLC</li><li>Sprint Planning</li><li>Backlog Grooming</li></ul></div>
+      <div class="tools-block"><h3>Planning</h3><ul><li>Jira</li><li>Confluence</li><li>Microsoft Project</li><li>Azure DevOps</li><li>Monday.com</li><li>RAID Logs</li></ul></div>
+      <div class="tools-block"><h3>Reporting</h3><ul><li>Power BI</li><li>Excel (Advanced)</li><li>Google Sheets</li><li>KPI Dashboards</li><li>Executive Updates</li><li>Stakeholder Summaries</li></ul></div>
+      <div class="tools-block"><h3>Operations</h3><ul><li>Service Desk Platforms</li><li>Jira Automations</li><li>Outlook Automations</li><li>Process Mapping</li><li>Workflow Design</li><li>AI Tools</li></ul></div>
+    </div>
+  </div>
+</section>
+<section id="value">
+  <div class="section-inner fade-in">
+    <div class="section-label">What I Bring</div>
+    <h2>Why It Works</h2>
+    <div class="value-grid">
+      <div class="value-card"><h3>Agile Execution</h3><p>Sprint planning, ceremonies, backlog structure, and delivery tracking that actually sticks. Not just process for the sake of process.</p></div>
+      <div class="value-card"><h3>Ops Ownership</h3><p>Service desk design and ownership, workflow scaling, capacity planning, and reporting discipline. End-to-end, not just advisory.</p></div>
+      <div class="value-card"><h3>Cross-Team Clarity</h3><p>8–12 stakeholders coordinated across technical and business functions. Calm execution under ambiguity. Clear communication up and down.</p></div>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label" style="color: var(--accent);">Let's Talk</div>
+    <h2>Open to the Right Opportunity</h2>
+    <p>IT / Tech PM roles in South Florida. Strong Agile background. PMP certified. Available to connect.</p>
+    <div class="contact-links">
+      <a href="mailto:ybayen12@gmail.com" class="contact-link primary">ybayen12@gmail.com</a>
+      <a href="https://www.linkedin.com/in/yosef-bayen-pmp-3b3341198/" target="_blank" class="contact-link secondary">LinkedIn</a>
+      <a href="tel:+12016004479" class="contact-link secondary">+1 (201) 600-4479</a>
+    </div>
+  </div>
+</section>
+<footer>&copy; 2026 Yosef Bayen &mdash; IT Project Manager &mdash; Boca Raton, FL</footer>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
