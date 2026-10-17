@@ -100,7 +100,8 @@
     .found .side { left: var(--sc-gutter); right: var(--sc-gutter); width: auto; top: var(--sc-8); bottom: auto; }
     .fixed .side { left: var(--sc-gutter); right: var(--sc-gutter); top: calc(50svh + var(--sc-6)); bottom: auto; }
     .found h2, .found h1 { font-size: var(--sc-t-xl); }
-    .hero-name, .hero-fix { font-size: var(--sc-t-2xl) !important; }
+    .hero-name, .hero-fix { font-size: clamp(1.7rem, 1.2rem + 2.4vw, 2.4rem) !important; }
+    .found .side { top: var(--sc-6) !important; max-height: calc(var(--split) * 1svh - var(--sc-8)); overflow: hidden; }
     .found p { font-size: var(--sc-t-sm); max-width: none; }
     .fixed p, .big-label { font-size: var(--sc-t-sm); }
     .lead-in { font-size: var(--sc-t-sm); }
