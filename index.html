@@ -1,284 +1,326 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yosef Bayen | IT Project Manager</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yosef Bayen | Project Manager</title>
+<meta name="description" content="Yosef Bayen, PMP. Project manager for regulated software releases: finds what breaks in a release pipeline and builds the fix.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='16' height='32' fill='%23172630'/><rect x='16' width='16' height='32' fill='%23EDF1EA'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="scrollcraft.css">
 <style>
   :root {
-    --navy: #0f1e35;
-    --navy-mid: #1a2f4a;
-    --blue: #1d4ed8;
-    --blue-light: #3b82f6;
-    --accent: #f59e0b;
-    --cream: #faf8f4;
-    --text: #1a1a2e;
-    --muted: #64748b;
-    --border: #e2e8f0;
-    --white: #ffffff;
+    --sc-canvas: #172630;  --sc-surface: #1f3340;
+    --sc-ink: #e6ecee;     --sc-ink-soft: #a3b4bb;
+    --sc-accent: #f0a23a;  --sc-accent-ink: #172630;
+    --sc-font-display: "Bricolage Grotesque", system-ui, sans-serif;
+    --sc-font-text: "IBM Plex Sans", system-ui, sans-serif;
+
+    --light: #edf1ea; --light-ink: #14212a; --light-soft: #4a5a60; --light-accent: #8a5200;
+    --split: 50;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15, 30, 53, 0.97); backdrop-filter: blur(10px); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .nav-name { font-family: 'DM Serif Display', serif; color: var(--white); font-size: 1.1rem; letter-spacing: 0.02em; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--accent); }
-  .hero { min-height: 100vh; background: var(--navy); display: flex; flex-direction: column; justify-content: center; padding: 7rem 2rem 4rem; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(29,78,216,0.15) 0%, transparent 70%); pointer-events: none; }
-  .hero::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%); pointer-events: none; }
-  .hero-inner { max-width: 900px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
-  .hero-eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
-  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); }
-  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 8vw, 5.5rem); color: var(--white); line-height: 1.05; margin-bottom: 1.5rem; }
-  h1 em { color: var(--blue-light); font-style: italic; }
-  .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.65); max-width: 580px; line-height: 1.7; margin-bottom: 3rem; }
-  .hero-certs { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 3rem; }
-  .cert-tag { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); padding: 0.35rem 0.85rem; border-radius: 2px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em; }
-  .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); max-width: 640px; }
-  .stat { background: rgba(255,255,255,0.04); padding: 1.25rem 1.5rem; text-align: center; }
-  .stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--white); display: block; }
-  .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); letter-spacing: 0.05em; text-transform: uppercase; }
-  .hero-links { display: flex; gap: 1rem; margin-top: 2.5rem; }
-  .btn { padding: 0.75rem 1.75rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
-  .btn-primary { background: var(--blue); color: var(--white); }
-  .btn-primary:hover { background: var(--blue-light); }
-  .btn-outline { background: transparent; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.2); }
-  .btn-outline:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
-  section { padding: 5rem 2rem; }
-  .section-inner { max-width: 900px; margin: 0 auto; }
-  .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; }
-  h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--navy); line-height: 1.2; margin-bottom: 3rem; }
-  #about { background: var(--white); }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-  .about-block h3 { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-  .about-block p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.75rem; }
-  .strength-list { list-style: none; }
-  .strength-list li { padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; color: var(--text); display: flex; align-items: center; gap: 0.75rem; }
-  .strength-list li::before { content: ''; display: block; width: 6px; height: 6px; background: var(--blue); border-radius: 50%; flex-shrink: 0; }
-  #projects { background: var(--cream); }
-  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .project-card { background: var(--white); border: 1px solid var(--border); padding: 2rem; transition: box-shadow 0.2s, transform 0.2s; position: relative; overflow: hidden; }
-  .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--blue); }
-  .project-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
-  .project-role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; }
-  .project-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 0.25rem; }
-  .project-dates { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
-  .project-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
-  .impact-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-  .impact-list li { font-size: 0.83rem; color: var(--text); display: flex; align-items: flex-start; gap: 0.6rem; }
-  .impact-list li::before { content: '↑'; color: var(--blue); font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; }
-  #tools { background: var(--navy); }
-  #tools h2 { color: var(--white); }
-  #tools .section-label { color: var(--accent); }
-  .tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-  .tools-block h3 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .tools-block ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .tools-block li { font-size: 0.88rem; color: rgba(255,255,255,0.7); }
-  #value { background: var(--white); }
-  .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .value-card { border: 1px solid var(--border); padding: 2rem; position: relative; }
-  .value-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--accent)); }
-  .value-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 0.75rem; }
-  .value-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
-  #contact { background: var(--navy); text-align: center; padding: 5rem 2rem; }
-  #contact h2 { color: var(--white); margin-bottom: 1rem; }
-  #contact p { color: rgba(255,255,255,0.55); margin-bottom: 2.5rem; font-size: 0.95rem; }
-  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-  .contact-link { padding: 0.75rem 1.75rem; font-size: 0.83rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
-  .contact-link.primary { background: var(--blue); color: var(--white); }
-  .contact-link.primary:hover { background: var(--blue-light); }
-  .contact-link.secondary { border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); }
-  .contact-link.secondary:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
-  footer { background: #080f1a; padding: 1.5rem 2rem; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.25); }
-  @media (max-width: 700px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } .about-grid, .projects-grid, .tools-grid, .value-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
-  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* The two grounds. Found is dark, Fixed is light, and the fixed layer is
+     clipped at the divider so the balance can tip without moving layout. */
+  .found, .fixed { position: absolute; inset: 0; }
+  .found { background: var(--sc-canvas); color: var(--sc-ink); }
+  .fixed {
+    background: var(--light); color: var(--light-ink);
+    --sc-ink: var(--light-ink); --sc-ink-soft: var(--light-soft); --sc-accent: var(--light-accent);
+    clip-path: inset(0 0 0 calc(var(--split) * 1%));
+  }
+  .side { position: absolute; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: var(--sc-4); }
+  .found .side { left: var(--sc-gutter); width: calc(var(--w, 28vw) - var(--sc-gutter) - var(--sc-6)); }
+  .w46 { --w: 46vw; } .w40 { --w: 40vw; } .w34 { --w: 34vw; } .w30 { --w: 30vw; }
+  .fixed .side { left: calc(52vw + var(--sc-6)); right: var(--sc-gutter); max-width: 40rem; }
+
+  .when { font-size: var(--sc-t-sm); color: var(--sc-ink-soft); display: flex; gap: var(--sc-3); align-items: center; }
+  .status { font-weight: 600; font-size: var(--sc-t-xs); letter-spacing: 0.04em; padding: 2px 8px; border-radius: var(--sc-r-sm); border: 1px solid var(--sc-accent); color: var(--sc-accent); transition: background var(--sc-d-base), color var(--sc-d-base); }
+  .is-closed .status { background: var(--sc-accent); color: var(--sc-accent-ink); }
+  .is-closed .problem { text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: var(--sc-accent); }
+
+  h1, h2, h3 { font-family: var(--sc-font-display); margin: 0; letter-spacing: var(--sc-track-tight); line-height: var(--sc-leading-tight); text-wrap: balance; }
+  .found h2, .found h1 { font-size: var(--sc-t-2xl); font-weight: 700; }
+  .found p { margin: 0; color: var(--sc-ink-soft); max-width: 34ch; line-height: 1.68; letter-spacing: 0.005em; }
+  .fixed p { margin: 0; max-width: 46ch; }
+  .lead-in { font-size: var(--sc-t-lg); color: var(--light-soft); }
+
+  /* Hero: the two headlines read across the divider as one sentence. */
+  .hero-name { font-size: clamp(2.4rem, 1.4rem + 3vw, 4.4rem) !important; font-weight: 800 !important; }
+  .hero-fix { font-size: clamp(2.4rem, 1.4rem + 3vw, 4.4rem); font-weight: 800; font-family: var(--sc-font-display); letter-spacing: var(--sc-track-tight); line-height: var(--sc-leading-tight); color: var(--light-ink); }
+  .facts { display: flex; flex-wrap: wrap; gap: var(--sc-5) var(--sc-7); margin-top: var(--sc-5); }
+  .facts div { font-size: var(--sc-t-sm); color: var(--light-soft); }
+  .facts strong { display: block; font-family: var(--sc-font-display); font-size: var(--sc-t-xl); color: var(--light-ink); letter-spacing: var(--sc-track-snug); }
+
+  .big { display: inline-block; font-family: var(--sc-font-display); font-weight: 800; font-size: clamp(4rem, 2rem + 9vw, 10rem); line-height: 1; letter-spacing: -0.045em; padding-bottom: 0.06em; font-variant-numeric: tabular-nums; }
+  .big-label { font-size: var(--sc-t-lg); max-width: 30ch; }
+  .fix-line { border-top: 2px solid var(--light-ink); padding-top: var(--sc-4); margin-top: var(--sc-3) !important; }
+  .fix-line b { color: var(--light-accent); }
+
+  .scale { display: grid; grid-template-columns: auto 1fr; gap: var(--sc-2) var(--sc-6); align-items: baseline; padding: 0.1em 0.2em 0.1em 0; }
+  .scale strong { font-family: var(--sc-font-display); font-weight: 800; font-size: clamp(2.6rem, 1.4rem + 4.6vw, 6rem); letter-spacing: -0.04em; line-height: 1.04; }
+  .scale span { font-size: var(--sc-t-base); color: var(--light-soft); }
+
+  /* Peak: the launch board. Blocks land as the act scrolls. */
+  .board { display: grid; grid-template-columns: repeat(13, 1fr); gap: 6px; max-width: 34rem; }
+  .board i { aspect-ratio: 1; border-radius: 3px; background: color-mix(in oklab, var(--light-ink) 9%, transparent); transform: scale(0.6); opacity: 0.5; transition: transform 260ms var(--sc-ease-out), opacity 260ms var(--sc-ease-out), background-color 260ms; }
+  .board i.on { background: var(--light-ink); transform: none; opacity: 1; }
+  .board.moved i.on { background: var(--light-accent); }
+  .tally { font-family: var(--sc-font-display); font-weight: 800; font-size: var(--sc-t-3xl); letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+  .tally small { font-family: var(--sc-font-text); font-weight: 500; font-size: var(--sc-t-base); letter-spacing: 0; color: var(--light-soft); margin-left: var(--sc-2); }
+
+  /* Close: the fixed side owns the screen. */
+  .close .fixed .side { left: var(--sc-gutter); right: var(--sc-gutter); max-width: none; display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--sc-7) var(--sc-9); align-content: center; }
+  .close h2 { font-size: var(--sc-t-3xl); font-weight: 800; grid-column: 1 / -1; max-width: 18ch; }
+  .roles, .certs { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--light-ink); }
+  .roles li, .certs li { display: flex; justify-content: space-between; gap: var(--sc-5); padding: var(--sc-3) 0; border-bottom: 1px solid color-mix(in oklab, var(--light-ink) 16%, transparent); font-size: var(--sc-t-sm); }
+  .roles b { font-weight: 600; }
+  .roles span:last-child, .certs span:last-child { color: var(--light-soft); white-space: nowrap; }
+  .col-h { font-size: var(--sc-t-sm); font-weight: 600; margin: 0 0 var(--sc-2) !important; color: var(--light-soft); }
+  .ask { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: var(--sc-3); align-items: center; }
+  .btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 var(--sc-5); border-radius: var(--sc-r-sm); font-weight: 600; text-decoration: none; border: 2px solid var(--light-ink); color: var(--light-ink); }
+  .btn--solid { background: var(--light-ink); color: var(--light); }
+  .btn:hover { background: var(--light-accent); border-color: var(--light-accent); color: var(--light); }
+  a:focus-visible { outline: 3px solid var(--light-accent); outline-offset: 3px; }
+
+  /* The divider is the chrome: both labels and the open-ticket count. */
+  .divider { position: fixed; inset: 0 auto 0 0; width: 0; z-index: var(--sc-z-chrome); pointer-events: none; will-change: transform; transition: opacity var(--sc-d-slow); }
+  .divider::before { content: ""; position: absolute; inset: 0 auto 0 -1px; width: 2px; background: var(--sc-accent); }
+  .divider .lab { position: absolute; top: var(--sc-5); font-size: var(--sc-t-xs); font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .divider .lab--l { right: var(--sc-4); color: var(--sc-ink); }
+  .divider .lab--r { left: var(--sc-4); color: var(--light-ink); }
+  .divider .count { position: absolute; top: 50%; left: 0; transform: translate(-50%, -50%); background: var(--sc-accent); color: var(--sc-accent-ink); font-weight: 600; font-size: var(--sc-t-xs); padding: 6px 10px; border-radius: var(--sc-r-pill); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .divider.gone { opacity: 0; }
+
+  @media (max-width: 760px) {
+    .fixed { clip-path: inset(calc(var(--split) * 1%) 0 0 0); }
+    .side { justify-content: flex-start; gap: var(--sc-3); }
+    .found .side { left: var(--sc-gutter); right: var(--sc-gutter); width: auto; top: var(--sc-8); bottom: auto; }
+    .fixed .side { left: var(--sc-gutter); right: var(--sc-gutter); top: calc(50svh + var(--sc-6)); bottom: auto; }
+    .found h2, .found h1 { font-size: var(--sc-t-xl); }
+    .hero-name, .hero-fix { font-size: var(--sc-t-2xl) !important; }
+    .found p { font-size: var(--sc-t-sm); max-width: none; }
+    .fixed p, .big-label { font-size: var(--sc-t-sm); }
+    .lead-in { font-size: var(--sc-t-sm); }
+    .big { font-size: 4.2rem; }
+    .scale strong { font-size: 2.2rem; }
+    .scale span { font-size: var(--sc-t-sm); }
+    .facts { gap: var(--sc-3) var(--sc-5); margin-top: var(--sc-2); }
+    .facts strong { font-size: var(--sc-t-lg); }
+    .tally { font-size: var(--sc-t-2xl); }
+    .tally small { display: block; margin: 4px 0 0; font-size: var(--sc-t-sm); }
+    .board { gap: 4px; max-width: none; }
+    .divider { inset: 0 0 auto 0; height: 0; width: auto; }
+    .divider::before { inset: -1px 0 auto 0; height: 2px; width: auto; }
+    .divider .lab { top: auto; }
+    .divider .lab--l { right: auto; left: var(--sc-gutter); bottom: var(--sc-2); }
+    .divider .lab--r { left: var(--sc-gutter); top: var(--sc-2); }
+    .divider .count { left: auto; right: var(--sc-gutter); top: 0; transform: translateY(-50%); }
+    .close .fixed .side { top: var(--sc-6); bottom: auto; grid-template-columns: 1fr; gap: var(--sc-4); }
+    .close h2 { font-size: var(--sc-t-xl); }
+    .roles li, .certs li { padding: 5px 0; font-size: var(--sc-t-xs); }
+    .btn { min-height: 44px; padding: 0 var(--sc-4); font-size: var(--sc-t-sm); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .board i { transition: none; transform: none; }
+  }
 </style>
 </head>
 <body>
-<nav>
-  <span class="nav-name">Yosef Bayen</span>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#tools">Tools</a></li>
-    <li><a href="#value">Value</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">IT Project Manager</div>
-    <h1>Yosef<br><em>Bayen</em></h1>
-    <p class="hero-sub">Building structure where there isn't any. Driving delivery across software, operations, and infrastructure without always having formal authority. PMP certified. Agile-first. Execution-obsessed.</p>
-    <div class="hero-certs">
-      <span class="cert-tag">PMP</span>
-      <span class="cert-tag">CAPM</span>
-      <span class="cert-tag">AWS Certified Cloud Practitioner</span>
-      <span class="cert-tag">Google PM Certificate</span>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Years PM</span></div>
-      <div class="stat"><span class="stat-num">8–12</span><span class="stat-label">Stakeholders</span></div>
-      <div class="stat"><span class="stat-num">21</span><span class="stat-label">Automations Built</span></div>
-      <div class="stat"><span class="stat-num">~20%</span><span class="stat-label">Avg Improvement</span></div>
-    </div>
-    <div class="hero-links">
-      <a href="https://www.linkedin.com/in/yosef-bayen-pmp-3b3341198/" target="_blank" class="btn btn-primary">LinkedIn</a>
-      <a href="mailto:ybayen12@gmail.com" class="btn btn-outline">Get In Touch</a>
-    </div>
-  </div>
-</section>
-<section id="about">
-  <div class="section-inner fade-in">
-    <div class="section-label">Profile</div>
-    <h2>Credentials &amp; Focus</h2>
-    <div class="about-grid">
-      <div class="about-block">
-        <h3>Focus Areas</h3>
-        <p>Sprint execution, application delivery, service desk ownership, and operational process improvement across software and IT teams.</p>
-        <p>Experienced across development, automation, operations, QA, and vendor-facing coordination — typically owning delivery across 8–12 stakeholders per initiative.</p>
-        <p>Currently at Games Global managing end-to-end delivery, running Agile ceremonies, and owning a service desk platform that handles ad-hoc, hot-seat, and monthly capacity planning.</p>
-        <p>Designed and built a 21-automation suite that now runs the majority of a regulated, high-volume deployment pipeline &mdash; eliminating manual administrative work and surfacing reliability issues that had previously gone undetected.</p>
+
+<div class="divider" aria-hidden="true">
+  <span class="lab lab--l">Found</span>
+  <span class="lab lab--r">Fixed</span>
+  <span class="count" id="count">3 open</span>
+</div>
+
+<main id="top">
+
+  <!-- A1 hero: the split, established. Greet cues so the landing screen is full. -->
+  <section data-sc-act="pin" data-sc-span="1.6" aria-label="Introduction">
+    <div data-sc-stage>
+      <div class="found w46">
+        <div class="side" data-sc-cue="0 1 0 0.2">
+          <h1 class="hero-name" data-sc-kinetic="lines">Yosef Bayen finds what breaks in a release pipeline</h1>
+          <p>Project manager, PMP. 7+ years across software releases, construction and IT infrastructure.</p>
+        </div>
       </div>
-      <div class="about-block">
-        <h3>Core Strengths</h3>
-        <ul class="strength-list">
-          <li>Agile and Waterfall project management</li>
-          <li>Cross-functional delivery across technical teams</li>
-          <li>Service desk ownership and workload capacity planning</li>
-          <li>Process mapping and workflow optimization</li>
-          <li>Python automation &amp; workflow engineering (21+ scheduled automations)</li>
-          <li>Executive communication and KPI reporting</li>
-          <li>Stepping into leadership gaps without formal authority</li>
-        </ul>
+      <div class="fixed">
+        <div class="side" data-sc-cue="0 1 0 0.2">
+          <p class="hero-fix">and builds the fix.</p>
+          <div class="facts">
+            <div><strong>12</strong>enterprise clients</div>
+            <div><strong>7</strong>regulated U.S. and Canadian markets</div>
+            <div><strong>~1,000</strong>planned go-lives a year</div>
+            <div><strong>24</strong>automations built</div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<section id="projects">
-  <div class="section-inner fade-in">
-    <div class="section-label">Work</div>
-    <h2>Featured Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-role">Acting Project Manager</div>
-        <h3>V92 Jackpot Rollout</h3>
-        <div class="project-dates">2025–2026</div>
-        <p class="project-desc">Delivered a structured cross-functional rollout across development, automation, operations, and vendor stakeholders using Jira, Confluence, Microsoft Project, and Excel.</p>
-        <ul class="impact-list">
-          <li>Better rollout visibility across all workstreams</li>
-          <li>Fewer last-minute scope and date changes</li>
-          <li>Faster planning cycles for future releases</li>
-          <li>8–12 stakeholders coordinated end-to-end</li>
-        </ul>
+  </section>
+
+  <!-- A2: count. Hidden failures. -->
+  <section data-sc-act="pin" data-sc-span="2.0" data-ticket aria-label="Automation health">
+    <div data-sc-stage>
+      <div class="found w40">
+        <div class="side" data-sc-cue="0 1 0 0.2">
+          <div class="when"><span>June 2026</span><span class="status">Open</span></div>
+          <h2 class="problem">The dashboard said healthy.</h2>
+          <p>Healthy only meant a job ran without crashing, not that it did the right thing. A scheduler was doing nothing while the dashboard stayed green.</p>
+        </div>
       </div>
-      <div class="project-card">
-        <div class="project-role">Sprint Lead / Acting PM</div>
-        <h3>Game Automation Sprint Management</h3>
-        <div class="project-dates">2025–2026</div>
-        <p class="project-desc">Introduced formal sprint management across planning, tracking, scheduling, and backlog prioritization for the Game Automation team, running a dedicated 3-month sprint cycle from scratch.</p>
-        <ul class="impact-list">
-          <li>~20% higher delivery predictability</li>
-          <li>Meaningful increase in on-time task completion</li>
-          <li>Significantly fewer ad-hoc status requests</li>
-          <li>Supported 5–8 person team across 8+ stakeholders</li>
-        </ul>
-      </div>
-      <div class="project-card">
-        <div class="project-role">Platform Owner</div>
-        <h3>Service Desk Ownership &amp; Capacity Planning</h3>
-        <div class="project-dates">2025–Present</div>
-        <p class="project-desc">Redesigned the team's service desk intake process end-to-end &mdash; including 10 guided intake forms and an automated compliance notifier &mdash; converting an ad-hoc process into a structured, trackable queue. Own and manage the platform today, handling 150+ deployment tickets in a typical 90-day period.</p>
-        <ul class="impact-list">
-          <li>10 guided intake forms designed</li>
-          <li>Automated notifier caught 7 untracked tickets on first run</li>
-          <li>150+ tickets handled in a single 90-day period</li>
-          <li>Single owner for intake, triage, and capacity cycles</li>
-        </ul>
-      </div>
-      <div class="project-card">
-        <div class="project-role">Process Owner</div>
-        <h3>Game Update Process Optimization</h3>
-        <div class="project-dates">2024–2025</div>
-        <p class="project-desc">Audited and reconciled the team's core tracking board against live system data, correcting drift and surfacing hidden work, and resolved a systemic ticketing defect that had been generating recurring clutter for months.</p>
-        <ul class="impact-list">
-          <li>Removed 1,220 orphaned tickets in a single reconciliation</li>
-          <li>Reconciled ~1,490 board records against live systems</li>
-          <li>Faster cycle times, less rework and handoff friction</li>
-        </ul>
-      </div>
-      <div class="project-card">
-        <div class="project-role">Automation Owner</div>
-        <h3>Deployment Automation Suite</h3>
-        <div class="project-dates">2025–2026</div>
-        <p class="project-desc">Designed and built a suite of scheduled automations that now run the majority of the team's deployment pipeline &mdash; replacing manual ticket creation, scheduling, board updates, and status tracking.</p>
-        <ul class="impact-list">
-          <li>21 scheduled automations built and maintained</li>
-          <li>Reliability audit surfaced 170 errors, 165 failures, and 15 crashes that had been invisible</li>
-          <li>26 duplicate records caught and removed before impact</li>
-          <li>Health-monitoring and duplicate-prevention safeguards across 7 workflows</li>
-        </ul>
-      </div>
-      <div class="project-card">
-        <div class="project-role">Acting Team Lead</div>
-        <h3>Team Leadership During PM Gap</h3>
-        <div class="project-dates">2023–2025</div>
-        <p class="project-desc">Stepped up after PM departure to own prioritization, risk management, and stakeholder communication — preserving delivery continuity through ambiguous organizational transition.</p>
-        <ul class="impact-list">
-          <li>Maintained delivery continuity without missing a beat</li>
-          <li>Reduced escalation burden through consistent ownership</li>
-          <li>Built trust with peers and leadership during uncertainty</li>
-        </ul>
+      <div class="fixed">
+        <div class="side">
+          <div data-sc-cue="0.04 1 0.12 0.2"><span class="big" data-sc-count="0 350" data-sc-count-at="0.08 0.42">0</span></div>
+          <p class="big-label" data-sc-cue="0.1 1 0.12 0.2">hidden error, failure and crash entries found when I paused and audited all 16 scripts.</p>
+          <p class="fix-line" data-sc-cue="0.46 1 0.12 0.2"><b>Fixed:</b> repaired the highest-risk scripts and added a daily health check to the schedule.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<section id="tools">
-  <div class="section-inner fade-in">
-    <div class="section-label">Stack</div>
-    <h2>Methods &amp; Tools</h2>
-    <div class="tools-grid">
-      <div class="tools-block"><h3>Delivery</h3><ul><li>Agile / Scrum</li><li>Waterfall</li><li>Hybrid</li><li>Full SDLC</li><li>Sprint Planning</li><li>Backlog Grooming</li></ul></div>
-      <div class="tools-block"><h3>Planning</h3><ul><li>Jira</li><li>Confluence</li><li>Microsoft Project</li><li>Azure DevOps</li><li>Monday.com</li><li>RAID Logs</li></ul></div>
-      <div class="tools-block"><h3>Reporting</h3><ul><li>Power BI</li><li>Excel (Advanced)</li><li>Google Sheets</li><li>KPI Dashboards</li><li>Executive Updates</li><li>Stakeholder Summaries</li></ul></div>
-      <div class="tools-block"><h3>Operations</h3><ul><li>Service Desk Platforms</li><li>Jira Automations</li><li>Outlook Automations</li><li>Process Mapping</li><li>Workflow Design</li><li>AI Tools</li></ul></div>
+  </section>
+
+  <!-- A3: reveal. The board audit. Quieter than the peak that follows. -->
+  <section data-sc-act="pin" data-sc-span="2.2" data-ticket aria-label="Tracking board audit">
+    <div data-sc-stage>
+      <div class="found w34">
+        <div class="side" data-sc-cue="0 1 0 0.2">
+          <div class="when"><span>September 2026</span><span class="status">Open</span></div>
+          <h2 class="problem">The board drifted from reality.</h2>
+          <p>The automation set each item's status once, when it was created, and never refreshed it.</p>
+        </div>
+      </div>
+      <div class="fixed">
+        <div class="side">
+          <p class="lead-in" data-sc-cue="0.02 1 0.1 0.2">Audited every item against live ticket status.</p>
+          <div data-sc-reveal="left" data-sc-reveal-at="0.08 0.4">
+            <div class="scale">
+              <strong>3,216</strong><span>items</span>
+              <strong>16,761</strong><span>sub-items</span>
+              <strong>699</strong><span>statuses corrected</span>
+            </div>
+          </div>
+          <p class="fix-line" data-sc-cue="0.48 1 0.12 0.2"><b>Fixed:</b> every correction verified live. A second review caught 114 of my own wrong writes, and I reverted them.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-<section id="value">
-  <div class="section-inner fade-in">
-    <div class="section-label">What I Bring</div>
-    <h2>Why It Works</h2>
-    <div class="value-grid">
-      <div class="value-card"><h3>Agile Execution</h3><p>Sprint planning, ceremonies, backlog structure, and delivery tracking that actually sticks. Not just process for the sake of process.</p></div>
-      <div class="value-card"><h3>Ops Ownership</h3><p>Service desk design and ownership, workflow scaling, capacity planning, and reporting discipline. End-to-end, not just advisory.</p></div>
-      <div class="value-card"><h3>Cross-Team Clarity</h3><p>8–12 stakeholders coordinated across technical and business functions. Calm execution under ambiguity. Clear communication up and down.</p></div>
+  </section>
+
+  <!-- A4 PEAK: the launch board fills to 65. Largest span on the page. -->
+  <section data-sc-act="pin" data-sc-span="3.4" data-ticket data-launch aria-label="New market launch">
+    <div data-sc-stage>
+      <div class="found w30">
+        <div class="side" data-sc-cue="0 1 0 0.2">
+          <div class="when"><span>Aug to Sep 2026</span><span class="status">Open</span></div>
+          <h2 class="problem">A new state market. No staging environment.</h2>
+          <p>Every game had to be in production, with a tracking record, before go-live. Then the go-live date moved.</p>
+        </div>
+      </div>
+      <div class="fixed">
+        <div class="side">
+          <p class="tally" data-sc-cue="0.02 1 0.1 0.2"><span id="tally">0</span><small>of 65 production deployments scheduled</small></p>
+          <div class="board" id="board" data-sc-cue="0.02 1 0.1 0.2" role="img" aria-label="65 production deployments, scheduled across 4 engineers in 5 working days"></div>
+          <p class="fix-line" data-sc-cue="0.62 1 0.1 0.2"><b>Fixed:</b> scheduled across 4 engineers in 5 working days. When go-live moved, all 65 due dates were updated and verified. 31 activation tickets followed in one batch.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-<section id="contact">
-  <div class="section-inner">
-    <div class="section-label" style="color: var(--accent);">Let's Talk</div>
-    <h2>Open to the Right Opportunity</h2>
-    <p>IT / Tech PM roles in South Florida. Strong Agile background. PMP certified. Available to connect.</p>
-    <div class="contact-links">
-      <a href="mailto:ybayen12@gmail.com" class="contact-link primary">ybayen12@gmail.com</a>
-      <a href="https://www.linkedin.com/in/yosef-bayen-pmp-3b3341198/" target="_blank" class="contact-link secondary">LinkedIn</a>
-      <a href="tel:+12016004479" class="contact-link secondary">+1 (201) 600-4479</a>
+  </section>
+
+  <!-- A5 close: the divider sweeps away and the fixed side owns the screen. -->
+  <section class="close" data-sc-act="pin" data-sc-span="1.7" data-close aria-label="Experience and contact">
+    <div data-sc-stage>
+      <div class="found"></div>
+      <div class="fixed">
+        <div class="side">
+          <h2 data-sc-cue="0.3">Open to project and program management roles.</h2>
+          <div data-sc-cue="0.36">
+            <p class="col-h">Experience</p>
+            <ul class="roles">
+              <li><span><b>Games Global</b>, Project Manager</span><span>2023 to now</span></li>
+              <li><span><b>Grace Roofing and Metal Sheets</b>, Construction PM</span><span>2021 to 2023</span></li>
+              <li><span><b>Primeview USA</b>, IT Project Coordinator</span><span>2019 to 2021</span></li>
+              <li><span><b>Bergen Community College</b>, A.S. Business</span><span>2018</span></li>
+            </ul>
+          </div>
+          <div data-sc-cue="0.4">
+            <p class="col-h">Certifications</p>
+            <ul class="certs">
+              <li><span>PMP, Project Management Institute</span><span>Aug 2025</span></li>
+              <li><span>AWS Certified Cloud Practitioner</span><span>Oct 2025</span></li>
+              <li><span>CAPM, Project Management Institute</span><span>Feb 2025</span></li>
+              <li><span>Google Project Management Certificate</span><span>Jul 2024</span></li>
+            </ul>
+          </div>
+          <div class="ask" data-sc-cue="0.2">
+            <a class="btn btn--solid" href="mailto:ybayen12@gmail.com">Email Yosef</a>
+            <a class="btn" href="https://www.linkedin.com/in/yosef-bayen-pmp-3b3341198/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="tel:+12016004479">+1 (201) 600-4479</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-<footer>&copy; 2026 Yosef Bayen &mdash; IT Project Manager &mdash; Boca Raton, FL</footer>
+  </section>
+
+</main>
+
+<script src="scrollcraft.js"></script>
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  ScrollCraft.mount(document.body);
+
+  // Signature move: each fixed problem closes its ticket and tips the balance.
+  // The divider moves 6% toward Found per closed ticket, then the close sweeps it off.
+  (function () {
+    var root = document.documentElement;
+    var tickets = Array.prototype.slice.call(document.querySelectorAll('[data-ticket]'));
+    var closeAct = document.querySelector('[data-close]');
+    var launch = document.querySelector('[data-launch]');
+    var board = document.getElementById('board');
+    var tally = document.getElementById('tally');
+    var count = document.getElementById('count');
+    var divider = document.querySelector('.divider');
+    var small = matchMedia('(max-width: 760px)');
+    var TOTAL = 65, blocks = [];
+    for (var i = 0; i < TOTAL; i++) { var b = document.createElement('i'); board.appendChild(b); blocks.push(b); }
+
+    function p(el) { return parseFloat(el.style.getPropertyValue('--sc-p')) || 0; }
+    function ease(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+    var last = '', lastN = -1, cur = 50, target = 50;
+
+    function frame() {
+      var closed = 0;
+      tickets.forEach(function (t) {
+        // A ticket closes once its fix line is showing, and stays closed once passed.
+        var done = p(t) > 0.55 || t.getBoundingClientRect().bottom < innerHeight * 0.5;
+        t.classList.toggle('is-closed', done);
+        if (done) closed++;
+      });
+      target = 50 - 6 * closed;
+      cur += (target - cur) * 0.12;
+      var split = cur;
+      if (closeAct.getBoundingClientRect().top < innerHeight) split *= 1 - ease(Math.min(p(closeAct) / 0.28, 1));
+      root.style.setProperty('--split', split.toFixed(2));
+
+      var open = tickets.length - closed;
+      var label = open ? open + ' open' : 'All closed';
+      if (label !== last) { count.textContent = label; last = label; }
+      divider.classList.toggle('gone', split < 1);
+      divider.style.transform = small.matches
+        ? 'translate3d(0,' + (split / 100 * innerHeight).toFixed(1) + 'px,0)'
+        : 'translate3d(' + (split / 100 * innerWidth).toFixed(1) + 'px,0,0)';
+
+      // Peak: blocks land between 8% and 60% of the act, then recolour on the date move.
+      var lp = p(launch), passed = launch.getBoundingClientRect().bottom < 0;
+      var n = passed ? TOTAL : Math.round(Math.max(0, Math.min(1, (lp - 0.08) / 0.52)) * TOTAL);
+      if (n !== lastN) {
+        for (var k = 0; k < TOTAL; k++) blocks[k].classList.toggle('on', k < n);
+        tally.textContent = n; lastN = n;
+      }
+      board.classList.toggle('moved', lp > 0.7 || passed);
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
 </script>
 </body>
 </html>
