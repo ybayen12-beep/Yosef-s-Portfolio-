@@ -127,6 +127,34 @@
   @media (prefers-reduced-motion: reduce) {
     .board i { transition: none; transform: none; }
   }
+
+  /* The full log keeps the split: problem column on the dark ground, fix column on the light. */
+  .log { position: relative; z-index: 2; padding: var(--sc-8) 0 var(--sc-9); background: linear-gradient(90deg, var(--sc-canvas) 0 32vw, var(--light) 32vw 100%); }
+  .log-head, .row { display: grid; grid-template-columns: 32vw 1fr; }
+  .log-l { padding: var(--sc-6) var(--sc-7) var(--sc-6) var(--sc-gutter); color: var(--sc-ink); }
+  .log-r { padding: var(--sc-6) var(--sc-gutter) var(--sc-6) var(--sc-7); color: var(--light-ink); --sc-ink: var(--light-ink); --sc-ink-soft: var(--light-soft); max-width: 52rem; }
+  .log-head h2 { font-size: var(--sc-t-2xl); font-weight: 800; }
+  .log-head p { margin: var(--sc-3) 0 0; color: var(--sc-ink-soft); max-width: 34ch; }
+  .log-head .log-r p { color: var(--light-soft); max-width: 46ch; }
+  .log-head--sub { margin-top: var(--sc-8); }
+  .row { border-top: 1px solid color-mix(in oklab, var(--light-ink) 14%, transparent); }
+  .row .log-l { border-top: 1px solid color-mix(in oklab, var(--sc-ink) 14%, transparent); margin-top: -1px; }
+  .row h3 { font-size: var(--sc-t-lg); font-weight: 700; margin-top: var(--sc-2); }
+  .row .log-l p { margin: var(--sc-2) 0 0; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); max-width: 36ch; }
+  .row .log-r p { margin: 0 0 var(--sc-3); max-width: 60ch; }
+  .row ul { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--sc-2); }
+  .row li { position: relative; padding-left: var(--sc-5); font-size: var(--sc-t-sm); }
+  .row li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 8px; height: 8px; border-radius: 2px; background: var(--light-accent); }
+  .tools p { font-size: var(--sc-t-sm); }
+  .divider.in-log .count, .divider.in-log .lab { opacity: 0; }
+  @media (max-width: 760px) {
+    .log { background: var(--light); padding: 0; }
+    .log-head, .row { grid-template-columns: 1fr; }
+    .log-l { background: var(--sc-canvas); padding: var(--sc-5) var(--sc-gutter); }
+    .log-r { padding: var(--sc-5) var(--sc-gutter) var(--sc-6); }
+    .row .log-l p, .log-head p { max-width: none; }
+    .divider.in-log { opacity: 0; }
+  }
 </style>
 </head>
 <body>
@@ -228,6 +256,99 @@
     </div>
   </section>
 
+  <!-- Flow: the full ticket log, held in the same split. Every row is a real item. -->
+  <section class="log" data-sc-act="flow" aria-labelledby="log-h">
+    <div class="log-head">
+      <div class="log-l"><h2 id="log-h">The full log</h2><p>Every row is my own work at Games Global. Problem on the left, what I did and the result on the right.</p></div>
+      <div class="log-r"><p class="lead-in">Most recent first. Figures come from live system counts unless marked approximate.</p></div>
+    </div>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">Oct 2026</span><h3>Nobody owned the root cause of release faults.</h3><p>Client-reported faults were counted each week, but no one investigated why they happened or how to stop a repeat.</p></div>
+      <div class="log-r"><p>I volunteered to own the weekly review and built a review page into our analysis dashboard, with one entry per week, a trend view and exports.</p><ul><li>Set up 14 weeks of review records</li><li>Re-investigated all 7 faults that month</li><li>Found one fault had run for nine weeks, not four days</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">Oct 2026</span><h3>A non-technical team had to run the process by hand if the automation failed.</h3><p>The test from leadership: could they schedule a game tomorrow if I didn't show up?</p></div>
+      <div class="log-r"><p>I rewrote the step-by-step process documents, checked every rule against the live system, and added a "before you start" box and screenshots to each.</p><ul><li>7 documents rewritten</li><li>71 of 72 screenshots in place</li><li>Several outdated rules found and corrected</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">Sep 2026</span><h3>Leadership needed support tickets broken down.</h3><p>By client, release, root cause, market and time to resolve.</p></div>
+      <div class="log-r"><p>I analyzed the full ticket history, fixed a date-sorting error in the export, and built a multi-page dashboard that was merged into the team's shared code.</p><ul><li>3,677 tickets analyzed</li><li>Tickets placed in the product lifecycle rose from 272 to 675</li><li>Median time to resolve corrected from 5.03 to 4.74 days by using the real resolution date</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">Sep 2026</span><h3>The pipeline view raised false alarms.</h3><p>It flagged 65 games as needing attention. Most did not.</p></div>
+      <div class="log-r"><p>I checked all 65 against live data, traced three separate causes, and fixed four automation scripts, testing against every open item.</p><ul><li>65 flags reviewed, about 10 were real</li><li>4 scripts fixed</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">Aug 2026</span><h3>Was the backlog poor planning, or too much unplanned work?</h3><p>The two-engineer team needed an answer backed by data.</p></div>
+      <div class="log-r"><p>I measured planned and unplanned work against the team's own time budget, re-ran every figure against live data, and wrote a full report plus a one-page summary.</p><ul><li>Unplanned work ran at 152% of its budget</li><li>Planned work used 58% of its budget</li><li>639 manual date changes in 30 days</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">Aug 2026</span><h3>Client service commitments were buried in contracts.</h3><p>Leadership wanted to see what each contract promises, without reading every contract by hand.</p></div>
+      <div class="log-r"><p>I built a tracker that lists each contract's uptime target, response and resolution commitments and key dates, plus a list of contracts reviewed and excluded so nothing goes missing.</p><ul><li>17 contracts tracked</li><li>2 more reviewed and listed as excluded</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">Aug 2026</span><h3>Older builds could deploy after newer ones.</h3><p>When an update arrived while an older one was still scheduled, both stayed live.</p></div>
+      <div class="log-r"><p>I changed the update automation to cancel the replaced ticket and carry its date to the new one, then cleaned up the existing cases.</p><ul><li>28 duplicate tickets found across 7 games</li><li>11 were set to deploy the older build last</li><li>All 28 cancelled and verified</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">Aug 2026</span><h3>Reclassified deals left duplicate records open forever.</h3><p>The same delivery was being tracked twice.</p></div>
+      <div class="log-r"><p>I found the cause in the sync automation, wrote a detection rule, and tested it against every live record before cancelling anything.</p><ul><li>2,130 records audited</li><li>29 duplicates found, zero false positives</li><li>25 records cancelled with sign-off</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">Jul 2026</span><h3>Installs were booked weeks out while engineers had open time.</h3><p>One engineer was hard-coded as the assignee, and a search limit silently dropped records.</p></div>
+      <div class="log-r"><p>I set new scheduling rules (a 6-hour planned day, an 8-hour ceiling, work rotated between engineers) and reworked the three scheduling scripts to follow them.</p><ul><li>223 open records against a limit of 200</li><li>Limit raised to 450, with an alert if it's reached again</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">Jul 2026</span><h3>Finished work stayed open on the board.</h3><p>Tracking records had to be closed by hand after every linked ticket was done.</p></div>
+      <div class="log-r"><p>I built an automation that moves a record forward once all its tickets are done, with a name check, then a pass that closes finished sub-items.</p><ul><li>21 records moved on the first run, each verified</li><li>520 sub-items checked, 170 closed, zero errors</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">Jun to Jul 2026</span><h3>Every game update was handled by hand.</h3><p>Each one needed tickets per market, scheduling, linking, board updates and a reply to the requester.</p></div>
+      <div class="log-r"><p>I designed and built an automation that runs the full chain twice each weekday, plus an operations console showing the pipeline, calendar, automations and alerts.</p><ul><li>Runs twice every weekday</li><li>1,220 orphaned tickets removed in the clean-up</li><li>283 open tickets corrected for version tags</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">2025 to now</span><h3>Service desk requests arrived in any shape.</h3><p>Requests were ad hoc, and tickets with no team set fell into no queue at all.</p></div>
+      <div class="log-r"><p>I redesigned intake with 10 guided request forms and automated compliance checks, and I own the platform today.</p><ul><li>150+ release requests in a typical 90 days (approximate)</li><li>A new queue found 3 tickets already stuck with no route</li><li>Monthly capacity planning</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">2025 to 2026</span><h3>The automation team had no formal sprint process.</h3></div>
+      <div class="log-r"><p>I introduced formal sprint management and ran a dedicated 3-month sprint cycle, with KPI dashboards and RAID logs for senior leadership.</p></div>
+    </article>
+
+    <div class="log-head log-head--sub">
+      <div class="log-l"><h2>Before Games Global</h2></div>
+      <div class="log-r"></div>
+    </div>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">Jul 2021 to Jun 2023</span><h3>Construction Project Manager</h3><p>Grace Roofing and Metal Sheets, Coral Springs, FL</p></div>
+      <div class="log-r"><p>I managed concurrent construction projects with $2M to $5M in active budget, using Waterfall and phase-gate methods to hold schedule and budget.</p><ul><li>Coordinated architects, general contractors, inspectors and trade vendors</li><li>Ran change control, risk plans, issue logs and procurement schedules</li><li>Reviewed scopes of work and managed purchase orders</li><li>Kept every site within OSHA rules and local building codes</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">Jan 2019 to Jul 2021</span><h3>IT Project Coordinator and A/V Tech</h3><p>Primeview USA, Manhattan, NY</p></div>
+      <div class="log-r"><p>I coordinated IT and AV installations for high-profile clients, from design through deployment, including structured cabling and video display systems.</p><ul><li>Planned and scheduled installs with the engineering team</li><li>Ran the warehouse and device logistics, tracking inventory in Excel and Microsoft Project</li></ul></div>
+    </article>
+
+    <article class="row" data-sc-in>
+      <div class="log-l"><h3>Methods and tools</h3></div>
+      <div class="log-r tools"><p><b>Delivery:</b> Agile and Scrum, Waterfall, hybrid, sprint planning, backlog grooming, risk management and RAID logs, change control</p><p><b>Planning and reporting:</b> Jira, Confluence, Microsoft Project, Azure DevOps, Monday.com, Power BI, advanced Excel, KPI dashboards</p><p><b>Automation:</b> Python, Jira and Monday.com integrations, HTML and JavaScript dashboards, AI-assisted development</p></div>
+    </article>
+  </section>
+
   <!-- A5 close: the divider sweeps away and the fixed side owns the screen. -->
   <section class="close" data-sc-act="pin" data-sc-span="1.7" data-close aria-label="Experience and contact">
     <div data-sc-stage>
@@ -280,6 +401,7 @@
     var tally = document.getElementById('tally');
     var count = document.getElementById('count');
     var divider = document.querySelector('.divider');
+    var logSec = document.querySelector('.log');
     var small = matchMedia('(max-width: 760px)');
     var TOTAL = 65, blocks = [];
     for (var i = 0; i < TOTAL; i++) { var b = document.createElement('i'); board.appendChild(b); blocks.push(b); }
@@ -306,6 +428,8 @@
       var label = open ? open + ' open' : 'All closed';
       if (label !== last) { count.textContent = label; last = label; }
       divider.classList.toggle('gone', split < 1);
+      var lr = logSec.getBoundingClientRect();
+      divider.classList.toggle('in-log', lr.top < innerHeight * 0.6 && lr.bottom > innerHeight * 0.4);
       divider.style.transform = small.matches
         ? 'translate3d(0,' + (split / 100 * innerHeight).toFixed(1) + 'px,0)'
         : 'translate3d(' + (split / 100 * innerWidth).toFixed(1) + 'px,0,0)';
