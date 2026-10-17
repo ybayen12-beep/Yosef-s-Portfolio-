@@ -146,6 +146,8 @@
   .row li { position: relative; padding-left: var(--sc-5); font-size: var(--sc-t-sm); }
   .row li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 8px; height: 8px; border-radius: 2px; background: var(--light-accent); }
   .tools p { font-size: var(--sc-t-sm); }
+  .when .role { color: var(--sc-accent); font-weight: 600; }
+  .story { display: inline-block; margin-top: var(--sc-3); font-weight: 600; color: var(--light-accent); }
   .divider.in-log .count, .divider.in-log .lab { opacity: 0; }
   @media (max-width: 760px) {
     .log { background: var(--light); padding: 0; }
@@ -204,7 +206,7 @@
         <div class="side">
           <div data-sc-cue="0.04 1 0.12 0.2"><span class="big" data-sc-count="0 350" data-sc-count-at="0.08 0.42">0</span></div>
           <p class="big-label" data-sc-cue="0.1 1 0.12 0.2">hidden error, failure and crash entries found when I paused and audited all 16 scripts.</p>
-          <p class="fix-line" data-sc-cue="0.46 1 0.12 0.2"><b>Fixed:</b> repaired the highest-risk scripts and added a daily health check to the schedule.</p>
+          <p class="fix-line" data-sc-cue="0.46 1 0.12 0.2"><b>Fixed:</b> repaired the highest-risk scripts and added a daily health check to the schedule. <a class="story" href="case-automation-suite.html">Read the full story</a></p>
         </div>
       </div>
     </div>
@@ -230,7 +232,7 @@
               <strong>699</strong><span>statuses corrected</span>
             </div>
           </div>
-          <p class="fix-line" data-sc-cue="0.48 1 0.12 0.2"><b>Fixed:</b> every correction verified live. A second review caught 114 of my own wrong writes, and I reverted them.</p>
+          <p class="fix-line" data-sc-cue="0.48 1 0.12 0.2"><b>Fixed:</b> every correction verified live. A second review caught 114 of my own wrong writes, and I reverted them. <a class="story" href="case-board-audit.html">Read the full story</a></p>
         </div>
       </div>
     </div>
@@ -250,81 +252,81 @@
         <div class="side">
           <p class="tally" data-sc-cue="0.02 1 0.1 0.2"><span id="tally">0</span><small>of 65 production deployments scheduled</small></p>
           <div class="board" id="board" data-sc-cue="0.02 1 0.1 0.2" role="img" aria-label="65 production deployments, scheduled across 4 engineers in 5 working days"></div>
-          <p class="fix-line" data-sc-cue="0.62 1 0.1 0.2"><b>Fixed:</b> scheduled across 4 engineers in 5 working days. When go-live moved, all 65 due dates were updated and verified. 31 activation tickets followed in one batch.</p>
+          <p class="fix-line" data-sc-cue="0.62 1 0.1 0.2"><b>Fixed:</b> scheduled across 4 engineers in 5 working days. When go-live moved, all 65 due dates were updated and verified. 31 activation tickets followed in one batch. <a class="story" href="case-market-launch.html">Read the full story</a></p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Flow: the full ticket log, held in the same split. Every row is a real item. -->
-  <section class="log" data-sc-act="flow" aria-labelledby="log-h">
+  <section class="log" id="work-log" data-sc-act="flow" aria-labelledby="log-h">
     <div class="log-head">
       <div class="log-l"><h2 id="log-h">The full log</h2><p>Every row is my own work at Games Global. Problem on the left, what I did and the result on the right.</p></div>
       <div class="log-r"><p class="lead-in">Most recent first. Figures come from live system counts unless marked approximate.</p></div>
     </div>
 
     <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Oct 2026</span><h3>Nobody owned the root cause of release faults.</h3><p>Client-reported faults were counted each week, but no one investigated why they happened or how to stop a repeat.</p></div>
+      <div class="log-l"><span class="when">Oct 2026<span class="role">Role: Review owner</span></span><h3>Nobody owned the root cause of release faults.</h3><p>Client-reported faults were counted each week, but no one investigated why they happened or how to stop a repeat.</p></div>
       <div class="log-r"><p>I volunteered to own the weekly review and built a review page into our analysis dashboard, with one entry per week, a trend view and exports.</p><ul><li>Set up 14 weeks of review records</li><li>Re-investigated all 7 faults that month</li><li>Found one fault had run for nine weeks, not four days</li></ul></div>
     </article>
 
     <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Oct 2026</span><h3>A non-technical team had to run the process by hand if the automation failed.</h3><p>The test from leadership: could they schedule a game tomorrow if I didn't show up?</p></div>
+      <div class="log-l"><span class="when">Oct 2026<span class="role">Role: Author</span></span><h3>A non-technical team had to run the process by hand if the automation failed.</h3><p>The test from leadership: could they schedule a game tomorrow if I didn't show up?</p></div>
       <div class="log-r"><p>I rewrote the step-by-step process documents, checked every rule against the live system, and added a "before you start" box and screenshots to each.</p><ul><li>7 documents rewritten</li><li>71 of 72 screenshots in place</li><li>Several outdated rules found and corrected</li></ul></div>
     </article>
 
     <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Sep 2026</span><h3>Leadership needed support tickets broken down.</h3><p>By client, release, root cause, market and time to resolve.</p></div>
+      <div class="log-l"><span class="when">Sep 2026<span class="role">Role: Analyst and dashboard builder</span></span><h3>Leadership needed support tickets broken down.</h3><p>By client, release, root cause, market and time to resolve.</p></div>
       <div class="log-r"><p>I analyzed the full ticket history, fixed a date-sorting error in the export, and built a multi-page dashboard that was merged into the team's shared code.</p><ul><li>3,677 tickets analyzed</li><li>Tickets placed in the product lifecycle rose from 272 to 675</li><li>Median time to resolve corrected from 5.03 to 4.74 days by using the real resolution date</li></ul></div>
     </article>
 
     <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Sep 2026</span><h3>The pipeline view raised false alarms.</h3><p>It flagged 65 games as needing attention. Most did not.</p></div>
+      <div class="log-l"><span class="when">Sep 2026<span class="role">Role: Investigator and fixer</span></span><h3>The pipeline view raised false alarms.</h3><p>It flagged 65 games as needing attention. Most did not.</p></div>
       <div class="log-r"><p>I checked all 65 against live data, traced three separate causes, and fixed four automation scripts, testing against every open item.</p><ul><li>65 flags reviewed, about 10 were real</li><li>4 scripts fixed</li></ul></div>
     </article>
 
     <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Aug 2026</span><h3>Was the backlog poor planning, or too much unplanned work?</h3><p>The two-engineer team needed an answer backed by data.</p></div>
+      <div class="log-l"><span class="when">Aug 2026<span class="role">Role: Author of the capacity case</span></span><h3>Was the backlog poor planning, or too much unplanned work?</h3><p>The two-engineer team needed an answer backed by data.</p></div>
       <div class="log-r"><p>I measured planned and unplanned work against the team's own time budget, re-ran every figure against live data, and wrote a full report plus a one-page summary.</p><ul><li>Unplanned work ran at 152% of its budget</li><li>Planned work used 58% of its budget</li><li>639 manual date changes in 30 days</li></ul></div>
     </article>
 
     <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Aug 2026</span><h3>Client service commitments were buried in contracts.</h3><p>Leadership wanted to see what each contract promises, without reading every contract by hand.</p></div>
+      <div class="log-l"><span class="when">Aug 2026<span class="role">Role: Builder</span></span><h3>Client service commitments were buried in contracts.</h3><p>Leadership wanted to see what each contract promises, without reading every contract by hand.</p></div>
       <div class="log-r"><p>I built a tracker that lists each contract's uptime target, response and resolution commitments and key dates, plus a list of contracts reviewed and excluded so nothing goes missing.</p><ul><li>17 contracts tracked</li><li>2 more reviewed and listed as excluded</li></ul></div>
     </article>
 
     <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Aug 2026</span><h3>Older builds could deploy after newer ones.</h3><p>When an update arrived while an older one was still scheduled, both stayed live.</p></div>
+      <div class="log-l"><span class="when">Aug 2026<span class="role">Role: Automation builder</span></span><h3>Older builds could deploy after newer ones.</h3><p>When an update arrived while an older one was still scheduled, both stayed live.</p></div>
       <div class="log-r"><p>I changed the update automation to cancel the replaced ticket and carry its date to the new one, then cleaned up the existing cases.</p><ul><li>28 duplicate tickets found across 7 games</li><li>11 were set to deploy the older build last</li><li>All 28 cancelled and verified</li></ul></div>
     </article>
 
     <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Aug 2026</span><h3>Reclassified deals left duplicate records open forever.</h3><p>The same delivery was being tracked twice.</p></div>
+      <div class="log-l"><span class="when">Aug 2026<span class="role">Role: Audit owner</span></span><h3>Reclassified deals left duplicate records open forever.</h3><p>The same delivery was being tracked twice.</p></div>
       <div class="log-r"><p>I found the cause in the sync automation, wrote a detection rule, and tested it against every live record before cancelling anything.</p><ul><li>2,130 records audited</li><li>29 duplicates found, zero false positives</li><li>25 records cancelled with sign-off</li></ul></div>
     </article>
 
     <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Jul 2026</span><h3>Installs were booked weeks out while engineers had open time.</h3><p>One engineer was hard-coded as the assignee, and a search limit silently dropped records.</p></div>
+      <div class="log-l"><span class="when">Jul 2026<span class="role">Role: Set the scheduling rules</span></span><h3>Installs were booked weeks out while engineers had open time.</h3><p>One engineer was hard-coded as the assignee, and a search limit silently dropped records.</p></div>
       <div class="log-r"><p>I set new scheduling rules (a 6-hour planned day, an 8-hour ceiling, work rotated between engineers) and reworked the three scheduling scripts to follow them.</p><ul><li>223 open records against a limit of 200</li><li>Limit raised to 450, with an alert if it's reached again</li></ul></div>
     </article>
 
     <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Jul 2026</span><h3>Finished work stayed open on the board.</h3><p>Tracking records had to be closed by hand after every linked ticket was done.</p></div>
+      <div class="log-l"><span class="when">Jul 2026<span class="role">Role: Automation builder</span></span><h3>Finished work stayed open on the board.</h3><p>Tracking records had to be closed by hand after every linked ticket was done.</p></div>
       <div class="log-r"><p>I built an automation that moves a record forward once all its tickets are done, with a name check, then a pass that closes finished sub-items.</p><ul><li>21 records moved on the first run, each verified</li><li>520 sub-items checked, 170 closed, zero errors</li></ul></div>
     </article>
 
     <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Jun to Jul 2026</span><h3>Every game update was handled by hand.</h3><p>Each one needed tickets per market, scheduling, linking, board updates and a reply to the requester.</p></div>
+      <div class="log-l"><span class="when">Jun to Jul 2026<span class="role">Role: Designer and builder</span></span><h3>Every game update was handled by hand.</h3><p>Each one needed tickets per market, scheduling, linking, board updates and a reply to the requester.</p></div>
       <div class="log-r"><p>I designed and built an automation that runs the full chain twice each weekday, plus an operations console showing the pipeline, calendar, automations and alerts.</p><ul><li>Runs twice every weekday</li><li>1,220 orphaned tickets removed in the clean-up</li><li>283 open tickets corrected for version tags</li></ul></div>
     </article>
 
     <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">2025 to now</span><h3>Service desk requests arrived in any shape.</h3><p>Requests were ad hoc, and tickets with no team set fell into no queue at all.</p></div>
+      <div class="log-l"><span class="when">2025 to now<span class="role">Role: Platform owner</span></span><h3>Service desk requests arrived in any shape.</h3><p>Requests were ad hoc, and tickets with no team set fell into no queue at all.</p></div>
       <div class="log-r"><p>I redesigned intake with 10 guided request forms and automated compliance checks, and I own the platform today.</p><ul><li>150+ release requests in a typical 90 days (approximate)</li><li>A new queue found 3 tickets already stuck with no route</li><li>Monthly capacity planning</li></ul></div>
     </article>
 
     <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">2025 to 2026</span><h3>The automation team had no formal sprint process.</h3></div>
+      <div class="log-l"><span class="when">2025 to 2026<span class="role">Role: Sprint lead</span></span><h3>The automation team had no formal sprint process.</h3></div>
       <div class="log-r"><p>I introduced formal sprint management and ran a dedicated 3-month sprint cycle, with KPI dashboards and RAID logs for senior leadership.</p></div>
     </article>
 

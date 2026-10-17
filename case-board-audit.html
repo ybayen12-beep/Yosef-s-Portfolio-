@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tracking board accuracy audit and data clean-up | Yosef Bayen</title>
+<meta name="description" content="I audited every item on the team's tracking board against live ticket status, fixed 699 statuses with sign-off, and caught and reverted 114 of my own wrong writes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<header class="top"><a href="index.html">Yosef Bayen, PMP</a><a href="index.html#work-log">See more work</a></header>
+<main>
+  <section class="case-hero">
+    <div class="problem">
+      <p class="meta"><span>August 2026 to September 2026</span><span><b>Role:</b> Project Manager, audit owner</span><span>Games Global</span></p>
+      <h1>I audited the team's tracking board and made it match reality</h1>
+      <p>The automation that filled our tracking board set each item's status once, when the item was created, and never updated it. The board looked current, but it wasn't.</p>
+    </div>
+    <div class="result">
+      <div class="figures">
+        <div><strong>3,216</strong><span>items checked, plus 16,761 sub-items</span></div>
+        <div><strong>699</strong><span>status fixes, live and verified</span></div>
+        <div><strong>114</strong><span>of my own wrong writes caught and reverted</span></div>
+        <div><strong>0</strong><span>false positives across 2,130 records in the duplicate check</span></div>
+      </div>
+    </div>
+  </section>
+  <article class="case-body">
+    <section>
+      <h2>The situation</h2>
+      <p>In September 2026 I questioned whether the automation behind it kept it accurate. I found it set each status at creation and never refreshed it. The board showed old statuses as if they were current.</p>
+      <p>A month earlier, in August 2026, I'd found a related problem. When a game was reclassified as an exclusive deal, its original tracking record stayed open forever, so the same delivery showed up twice.</p>
+    </section>
+    <section>
+      <h2>My role</h2>
+      <p>I was the Project Manager and the audit owner. I ran the audit end to end, got sign-off before changing anything, and reviewed my own fixes afterwards.</p>
+    </section>
+    <section>
+      <h2>What I did</h2>
+      <ol>
+        <li>I compared every item and sub-item in all nine board groups against its live ticket status. That covered 3,216 items and 16,761 sub-items.</li>
+        <li>I applied the fixes with sign-off: 699 status changes and 6 moves between groups.</li>
+        <li>I ran a confidence review of my own fixes. It caught 114 wrong writes of mine, and I reverted every one.</li>
+        <li>I re-checked live status and promoted 57 more items. I also gave 77 undated items the correct label.</li>
+        <li>For the duplicates, I traced the root cause to the sync automation and wrote a rule to detect them. I tested that rule against every live record, not a few hand-picked examples.</li>
+      </ol>
+    </section>
+    <section>
+      <h2>The result</h2>
+      <ul>
+        <li>699 status fixes and 6 group moves are live and verified.</li>
+        <li>114 of my own mistakes were found and undone.</li>
+        <li>57 more items promoted after a live re-check, and 77 undated items re-labelled correctly.</li>
+        <li>The duplicate check covered 2,130 records and found 29 duplicates, with 0 false positives.</li>
+        <li>With sign-off, I cancelled 25 duplicate records, plus 37 child records and 3 orphaned tickets.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>How the work flowed</h2>
+      <ol class="steps">
+        <li><b>Question the board</b>Ask whether the statuses can be trusted.</li>
+        <li><b>Compare every item to live status</b>Check the whole board, not a sample.</li>
+        <li><b>Fix with sign-off</b>Change nothing without approval.</li>
+        <li><b>Review my own fixes</b>Look for mistakes in my own changes.</li>
+        <li><b>Revert the 114 wrong writes</b>Undo every one I got wrong.</li>
+      </ol>
+      <p class="note">Illustrative diagram, drawn for this page. Totals above are real.</p>
+    </section>
+    <section>
+      <h2>Tools</h2>
+      <p>I wrote the checks in Python. I used the project board's API and the work-tracking system's API. An API is a way for programs to read and update a system directly.</p>
+    </section>
+  </article>
+</main>
+<footer class="next">
+  <h2>Want the full story?</h2>
+  <div class="links">
+    <a class="btn btn--solid" href="mailto:ybayen12@gmail.com">Email Yosef</a>
+    <a class="btn" href="index.html#work-log">See more work</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deployment automation suite and silent-failure audit | Yosef Bayen</title>
+<meta name="description" content="I designed and built 24 scheduled automations for a deployment pipeline, then audited them when I found one failing quietly behind a healthy dashboard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<header class="top"><a href="index.html">Yosef Bayen, PMP</a><a href="index.html#work-log">See more work</a></header>
+<main>
+  <section class="case-hero">
+    <div class="problem">
+      <p class="meta"><span>2025 to 2026</span><span><b>Role:</b> Project Manager, designer and builder of the automations</span><span>Games Global</span></p>
+      <h1>I automated a deployment pipeline, then made sure it told the truth</h1>
+      <p>Moving game updates out to each market meant manual ticket work for every market. Once I automated it, I found the bigger risk: a job could fail quietly while the dashboard said all was well.</p>
+    </div>
+    <div class="result">
+      <div class="figures">
+        <div><strong>24</strong><span>scheduled automations designed and built</span></div>
+        <div><strong>16</strong><span>scripts audited after a silent failure</span></div>
+        <div><strong>1,220</strong><span>orphaned tickets cleaned up</span></div>
+        <div><strong>28</strong><span>duplicate tickets found and cancelled</span></div>
+      </div>
+    </div>
+  </section>
+  <article class="case-body">
+    <section><h2>The situation</h2><p>Every game update had to be turned into tickets, scheduled, linked, tracked on a project board and reported back to the person who asked for it. People did each of those steps by hand.</p></section>
+    <section><h2>My role</h2><p>I'm the Project Manager, and I also designed and built the automations myself, using AI-assisted development.</p></section>
+    <section><h2>What I did</h2><ol>
+      <li>I built 24 scheduled Python automations connected to Jira and Monday.com. They took over ticket creation, scheduling, linking, board updates, status tracking and replies to requesters.</li>
+      <li>In June 2026 I built an end-to-end game update automation that runs the full chain twice each weekday. I added a local operations console showing the pipeline, calendar, automations and alerts, with an audit trail, start-up self-checks and a read-only view. That view let a reviewing team trust the system without operating it.</li>
+      <li>In the same month I cleaned up 1,220 orphaned tickets left behind by an older built-in rule.</li>
+      <li>I then found a scheduler that did nothing while the dashboard showed it as healthy, because "healthy" only meant "ran without crashing". I paused the whole suite and audited 16 scripts. They shared three bug types: errors read as success, loose name matching, and failed work marked as done. I fixed the highest-risk scripts first and added a daily health check.</li>
+      <li>I added safeguards against duplicate tickets across 7 workflows.</li>
+      <li>In July 2026 I launched a close-out automation. Its first live run moved 21 records, and I verified each one.</li>
+      <li>In August 2026 I found 7 games with 28 duplicate tickets, 11 of them scheduled so an older build would deploy last. I cancelled all 28 and verified them. The automation now cancels the replaced ticket itself and carries its date over to the new one.</li>
+    </ol></section>
+    <section><h2>The result</h2><ul>
+      <li>The audit surfaced 170 error lines, 165 failure lines and 15 crash traces that had been hidden in the logs.</li>
+      <li>A follow-up close-out pass checked 520 child items and closed 170, with 0 errors.</li>
+      <li>A daily health check now runs on the schedule alongside the automations.</li>
+      <li>One task still needs a person: rescheduling when two pieces of work clash. That's a judgement call, not a rule, so I left it with people.</li>
+    </ul></section>
+    <section><h2>How the work flowed</h2><ol class="steps">
+      <li><b>Request arrives</b>An update request comes in.</li>
+      <li><b>Tickets created</b>One ticket per market.</li>
+      <li><b>Scheduled</b>Each ticket gets its slot.</li>
+      <li><b>Linked and tracked</b>Tickets are linked and followed on the board.</li>
+      <li><b>Requester updated</b>The person who asked hears back.</li>
+      <li><b>Health check</b>A daily health check runs.</li>
+    </ol><p class="note">Illustrative diagram, drawn for this page. Totals above are real.</p></section>
+    <section><h2>Tools</h2><p>Python, Jira, Monday.com and AI-assisted development.</p></section>
+  </article>
+</main>
+<footer class="next">
+  <h2>Want the full story?</h2>
+  <div class="links">
+    <a class="btn btn--solid" href="mailto:ybayen12@gmail.com">Email Yosef</a>
+    <a class="btn" href="index.html#work-log">See more work</a>
+  </div>
+</footer>
+</body>
+</html>
