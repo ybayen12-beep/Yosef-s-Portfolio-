@@ -3,69 +3,134 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tracking board accuracy audit and data clean-up | Yosef Bayen</title>
-<meta name="description" content="I audited every item on the team's tracking board against live ticket status, fixed 699 statuses with sign-off, and caught and reverted 114 of my own wrong writes.">
+<title>Checking and fixing the team's tracking board | Yosef Bayen</title>
+<meta name="description" content="I checked every item on the team's tracking board against the current status of its ticket, fixed 699 statuses with approval, and caught and undid 114 of my own wrong updates.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Checking the team's tracking board | Yosef Bayen">
+<meta property="og:description" content="I checked every item on the team's tracking board against the current status of its ticket, fixed 699 statuses with approval, and caught and undid 114 of my own wrong updates.">
+<meta property="og:url" content="https://ybayen12-beep.github.io/Yosef-s-Portfolio-/case-board-audit.html">
+<meta property="og:image" content="https://ybayen12-beep.github.io/Yosef-s-Portfolio-/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="case.css">
+<style>
+.sample .strip { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.sample .strip span { padding: 0.35rem 0.7rem; border-radius: 6px; background: color-mix(in oklab, var(--ink) 6%, transparent); font-weight: 600; font-size: 0.8rem; }
+.sample h3 { font-size: 0.9rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+.sample .totals { margin-top: 0.5rem; font-size: 0.8rem; color: var(--soft); }
+.factsbox{list-style:none;padding:0;margin:0 0 2rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-size:.92rem}.factsbox b{color:var(--accent)}
+</style>
 </head>
 <body>
-<header class="top"><a href="index.html">Yosef Bayen, PMP</a><a href="index.html#work-log">See more work</a></header>
+<header class="top"><a href="index.html">Yosef Bayen, PMP</a><nav class="top-links" aria-label="Main"><a href="index.html#work-log">More work</a><a href="Yosef-Bayen-Resume.pdf" download>Resume</a><a href="mailto:ybayen12@gmail.com">Email</a></nav></header>
 <main>
   <section class="case-hero">
     <div class="problem">
       <p class="meta"><span>August 2026 to September 2026</span><span><b>Role:</b> Project Manager, audit owner</span><span>Games Global</span></p>
-      <h1>I audited the team's tracking board and made it match reality</h1>
-      <p>The automation that filled our tracking board set each item's status once, when the item was created, and never updated it. The board looked current, but it wasn't.</p>
+      <h1>I questioned whether our tracking board could be trusted, then checked all of it and fixed it with approval</h1>
+      <p>The board looked current, but it wasn't. The automation that filled it set each item's status once, when the item was created, and never updated it.</p>
     </div>
     <div class="result">
       <div class="figures">
-        <div><strong>3,216</strong><span>items checked, plus 16,761 sub-items</span></div>
-        <div><strong>699</strong><span>status fixes, live and verified</span></div>
-        <div><strong>114</strong><span>of my own wrong writes caught and reverted</span></div>
-        <div><strong>0</strong><span>false positives across 2,130 records in the duplicate check</span></div>
+        <div><strong>3,216</strong><span>items checked, plus 16,761 smaller tasks under them</span></div>
+        <div><strong>699</strong><span>status fixes, made and checked</span></div>
+        <div><strong>114</strong><span>of my own wrong updates caught and undone</span></div>
+        <div><strong>0</strong><span>records wrongly flagged as duplicates, out of 2,130 checked</span></div>
       </div>
     </div>
   </section>
+  <section class="sample" aria-labelledby="sample-h">
+    <h2 id="sample-h">What it looked like</h2>
+    <figure class="screen" role="img" aria-label="Sample audit screen: a summary of totals, a table comparing board status to live ticket status for seven made-up items, and a small duplicate check table">
+      <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span>Board vs live status audit (sample)</span></div>
+      <div class="screen-body">
+        <div class="strip">
+          <span>3,216 items and 16,761 smaller tasks checked</span>
+          <span>699 status fixes</span>
+          <span>6 items moved to the right section</span>
+          <span>114 of my own wrong updates undone</span>
+        </div>
+        <table>
+          <thead><tr><th>Item</th><th>Board said</th><th>Ticket actually says</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Game 01, Market A</td><td>Done</td><td>Done</td><td><span class="chip chip--ok">Matches</span> None</td></tr>
+            <tr><td>Game 02, Market A</td><td>In progress</td><td>Done</td><td><span class="chip chip--warn">Fixed with approval</span></td></tr>
+            <tr><td>Game 03, Market B</td><td>In progress</td><td>In progress</td><td><span class="chip chip--ok">Matches</span> None</td></tr>
+            <tr><td>Game 04, Market B</td><td>In progress</td><td>Done</td><td><span class="chip chip--warn">Fixed with approval</span></td></tr>
+            <tr><td>Game 05, Market A</td><td>Done</td><td>In progress</td><td><span class="chip chip--muted">Undone</span> my wrong update</td></tr>
+            <tr><td>Game 06, Market B</td><td>Done</td><td>Done</td><td><span class="chip chip--ok">Matches</span> None</td></tr>
+            <tr><td>Game 07, Market A</td><td>In progress</td><td>Done</td><td><span class="chip chip--warn">Fixed with approval</span></td></tr>
+          </tbody>
+        </table>
+        <h3>Duplicate check (sample)</h3>
+        <table>
+          <thead><tr><th>Record</th><th>Same as</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>DEP-101, Game 02</td><td>DEP-118, Game 02</td><td><span class="chip chip--bad">Duplicate</span></td></tr>
+            <tr><td>DEP-104, Game 04</td><td>None</td><td><span class="chip chip--ok">Unique</span></td></tr>
+            <tr><td>DEP-107, Game 06</td><td>DEP-121, Game 06</td><td><span class="chip chip--bad">Duplicate</span></td></tr>
+          </tbody>
+        </table>
+        <p class="totals">2,130 records checked, 29 duplicates found, 0 flagged by mistake</p>
+      </div>
+    </figure>
+    <p class="sample-caption">Sample screen recreated for this page with made-up names and data. The real system is private. Totals in the text are real.</p>
+  </section>
   <article class="case-body">
+    <ul class="factsbox">
+      <li><b>Role:</b> Project Manager, audit owner</li>
+      <li><b>Dates:</b> August 2026 to September 2026</li>
+      <li><b>Scope:</b> 3,216 items and 16,761 smaller tasks in all nine sections of the board</li>
+      <li><b>PM focus:</b> data quality audit, scope definition, change approval, quality control, root cause analysis</li>
+    </ul>
     <section>
-      <h2>The situation</h2>
-      <p>In September 2026 I questioned whether the automation behind it kept it accurate. I found it set each status at creation and never refreshed it. The board showed old statuses as if they were current.</p>
-      <p>A month earlier, in August 2026, I'd found a related problem. When a game was reclassified as an exclusive deal, its original tracking record stayed open forever, so the same delivery showed up twice.</p>
+      <h2>The situation: root cause analysis</h2>
+      <p>The tracking board looked current, but it was not. The automation that filled it set each item's status once, when the item was created, and never refreshed it. Old statuses showed as if they were current.</p>
+      <p>I had found a related problem in August 2026. When a game was reclassified as an exclusive deal, its original tracking record stayed open forever. The same delivery showed up twice.</p>
     </section>
     <section>
-      <h2>My role</h2>
-      <p>I was the Project Manager and the audit owner. I ran the audit end to end, got sign-off before changing anything, and reviewed my own fixes afterwards.</p>
+      <h2>What I owned: the data quality audit</h2>
+      <p>I owned this audit, from the first question to the last fix. I raised that question myself in September 2026: did the automation keep the board accurate?</p>
     </section>
     <section>
-      <h2>What I did</h2>
-      <ol>
-        <li>I compared every item and sub-item in all nine board groups against its live ticket status. That covered 3,216 items and 16,761 sub-items.</li>
-        <li>I applied the fixes with sign-off: 699 status changes and 6 moves between groups.</li>
-        <li>I ran a confidence review of my own fixes. It caught 114 wrong writes of mine, and I reverted every one.</li>
-        <li>I re-checked live status and promoted 57 more items. I also gave 77 undated items the correct label.</li>
-        <li>For the duplicates, I traced the root cause to the sync automation and wrote a rule to detect them. I tested that rule against every live record, not a few hand-picked examples.</li>
-      </ol>
+      <h2>The decision: scope definition</h2>
+      <p>I checked the whole board rather than a sample. That meant every item and every smaller task in all nine sections, each compared against the current status of its ticket.</p>
+      <p>For duplicates, I tested the detection rule against every current record rather than a few hand-picked examples, before removing anything.</p>
+    </section>
+    <section>
+      <h2>How I ran it: change approval and quality control</h2>
+      <ul>
+        <li>I set one rule for every change: no change without approval.</li>
+        <li>I sequenced the work: compare, fix with approval, review my own fixes, then re-check the live ticket status.</li>
+        <li>I required a second review of my own fixes. It caught 114 wrong updates of mine, and I undid every one.</li>
+        <li>On the re-check, I moved 57 more items up to the status they had reached and gave 77 items with no date the correct label.</li>
+        <li>I traced the duplicates to the automation that keeps the board in step with the tickets. I then wrote a rule to spot them, meaning a check that flags two records for the same delivery.</li>
+      </ul>
     </section>
     <section>
       <h2>The result</h2>
       <ul>
-        <li>699 status fixes and 6 group moves are live and verified.</li>
-        <li>114 of my own mistakes were found and undone.</li>
-        <li>57 more items promoted after a live re-check, and 77 undated items re-labelled correctly.</li>
-        <li>The duplicate check covered 2,130 records and found 29 duplicates, with 0 false positives.</li>
-        <li>With sign-off, I cancelled 25 duplicate records, plus 37 child records and 3 orphaned tickets.</li>
+        <li>699 status fixes and 6 section moves are in place and checked.</li>
+        <li>114 of my own wrong updates were found and undone.</li>
+        <li>57 more items moved up to their correct status, and 77 items with no date were re-labelled correctly.</li>
+        <li>The duplicate check covered 2,130 records and found 29 duplicates, with 0 records flagged by mistake.</li>
+        <li>With approval, I cancelled 25 duplicate records, plus 37 child records (smaller records attached to a main one) and 3 leftover tickets with nothing linked to them.</li>
+        <li>These are counts of fixes and checks. I did not measure what changed for the people using the board.</li>
       </ul>
     </section>
     <section>
       <h2>How the work flowed</h2>
       <ol class="steps">
         <li><b>Question the board</b>Ask whether the statuses can be trusted.</li>
-        <li><b>Compare every item to live status</b>Check the whole board, not a sample.</li>
-        <li><b>Fix with sign-off</b>Change nothing without approval.</li>
+        <li><b>Compare every item to its ticket</b>Check the whole board, not a sample.</li>
+        <li><b>Fix with approval</b>Change nothing without approval.</li>
         <li><b>Review my own fixes</b>Look for mistakes in my own changes.</li>
-        <li><b>Revert the 114 wrong writes</b>Undo every one I got wrong.</li>
+        <li><b>Undo the 114 wrong updates</b>Undo every one I got wrong.</li>
       </ol>
       <p class="note">Illustrative diagram, drawn for this page. Totals above are real.</p>
     </section>
@@ -79,6 +144,7 @@
   <h2>Want the full story?</h2>
   <div class="links">
     <a class="btn btn--solid" href="mailto:ybayen12@gmail.com">Email Yosef</a>
+    <a class="btn" href="Yosef-Bayen-Resume.pdf" download>Download resume</a>
     <a class="btn" href="index.html#work-log">See more work</a>
   </div>
 </footer>

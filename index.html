@@ -4,7 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Yosef Bayen | Project Manager</title>
-<meta name="description" content="Yosef Bayen, PMP. Project manager for regulated software releases: finds what breaks in a release pipeline and builds the fix.">
+<meta name="description" content="Yosef Bayen, PMP. Project manager for software release delivery in regulated markets, with 7+ years of experience.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yosef Bayen | Project Manager, PMP">
+<meta property="og:description" content="Yosef Bayen, PMP. Project manager for software release delivery in regulated markets, with 7+ years of experience.">
+<meta property="og:url" content="https://ybayen12-beep.github.io/Yosef-s-Portfolio-/">
+<meta property="og:image" content="https://ybayen12-beep.github.io/Yosef-s-Portfolio-/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='16' height='32' fill='%23172630'/><rect x='16' width='16' height='32' fill='%23EDF1EA'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +48,6 @@
   .when { font-size: var(--sc-t-sm); color: var(--sc-ink-soft); display: flex; gap: var(--sc-3); align-items: center; }
   .status { font-weight: 600; font-size: var(--sc-t-xs); letter-spacing: 0.04em; padding: 2px 8px; border-radius: var(--sc-r-sm); border: 1px solid var(--sc-accent); color: var(--sc-accent); transition: background var(--sc-d-base), color var(--sc-d-base); }
   .is-closed .status { background: var(--sc-accent); color: var(--sc-accent-ink); }
-  .is-closed .problem { text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: var(--sc-accent); }
 
   h1, h2, h3 { font-family: var(--sc-font-display); margin: 0; letter-spacing: var(--sc-track-tight); line-height: var(--sc-leading-tight); text-wrap: balance; }
   .found h2, .found h1 { font-size: var(--sc-t-2xl); font-weight: 700; }
@@ -49,7 +57,9 @@
 
   /* Hero: the two headlines read across the divider as one sentence. */
   .hero-name { font-size: clamp(2.4rem, 1.4rem + 3vw, 4.4rem) !important; font-weight: 800 !important; }
-  .hero-fix { font-size: clamp(2.4rem, 1.4rem + 3vw, 4.4rem); font-weight: 800; font-family: var(--sc-font-display); letter-spacing: var(--sc-track-tight); line-height: var(--sc-leading-tight); color: var(--light-ink); }
+  .hero-title { font-family: var(--sc-font-display); font-size: var(--sc-t-xl) !important; font-weight: 700; color: var(--sc-accent) !important; letter-spacing: var(--sc-track-snug); }
+  .side { padding-top: 3.25rem; }
+  .hero-fix { font-size: clamp(1.6rem, min(1.2rem + 1.8vw, 5.2vh), 3rem); font-weight: 800; font-family: var(--sc-font-display); letter-spacing: var(--sc-track-tight); line-height: var(--sc-leading-tight); color: var(--light-ink); }
   .facts { display: flex; flex-wrap: wrap; gap: var(--sc-5) var(--sc-7); margin-top: var(--sc-5); }
   .facts div { font-size: var(--sc-t-sm); color: var(--light-soft); }
   .facts strong { display: block; font-family: var(--sc-font-display); font-size: var(--sc-t-xl); color: var(--light-ink); letter-spacing: var(--sc-track-snug); }
@@ -68,6 +78,7 @@
   .board i { aspect-ratio: 1; border-radius: 3px; background: color-mix(in oklab, var(--light-ink) 9%, transparent); transform: scale(0.6); opacity: 0.5; transition: transform 260ms var(--sc-ease-out), opacity 260ms var(--sc-ease-out), background-color 260ms; }
   .board i.on { background: var(--light-ink); transform: none; opacity: 1; }
   .board.moved i.on { background: var(--light-accent); }
+  .board-key { font-size: var(--sc-t-sm); color: var(--light-soft); }
   .tally { font-family: var(--sc-font-display); font-weight: 800; font-size: var(--sc-t-3xl); letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
   .tally small { font-family: var(--sc-font-text); font-weight: 500; font-size: var(--sc-t-base); letter-spacing: 0; color: var(--light-soft); margin-left: var(--sc-2); }
 
@@ -88,7 +99,7 @@
   /* The divider is the chrome: both labels and the open-ticket count. */
   .divider { position: fixed; inset: 0 auto 0 0; width: 0; z-index: var(--sc-z-chrome); pointer-events: none; will-change: transform; transition: opacity var(--sc-d-slow); }
   .divider::before { content: ""; position: absolute; inset: 0 auto 0 -1px; width: 2px; background: var(--sc-accent); }
-  .divider .lab { position: absolute; top: var(--sc-5); font-size: var(--sc-t-xs); font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+  .divider .lab { position: absolute; top: 4.25rem; font-size: var(--sc-t-xs); font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
   .divider .lab--l { right: var(--sc-4); color: var(--sc-ink); }
   .divider .lab--r { left: var(--sc-4); color: var(--light-ink); }
   .divider .count { position: absolute; top: 50%; left: 0; transform: translate(-50%, -50%); background: var(--sc-accent); color: var(--sc-accent-ink); font-weight: 600; font-size: var(--sc-t-xs); padding: 6px 10px; border-radius: var(--sc-r-pill); white-space: nowrap; font-variant-numeric: tabular-nums; }
@@ -100,7 +111,9 @@
     .found .side { left: var(--sc-gutter); right: var(--sc-gutter); width: auto; top: var(--sc-8); bottom: auto; }
     .fixed .side { left: var(--sc-gutter); right: var(--sc-gutter); top: calc(50svh + var(--sc-6)); bottom: auto; }
     .found h2, .found h1 { font-size: var(--sc-t-xl); }
-    .hero-name, .hero-fix { font-size: clamp(1.7rem, 1.2rem + 2.4vw, 2.4rem) !important; }
+    .hero-name { font-size: clamp(2rem, 1.4rem + 2.4vw, 2.6rem) !important; }
+    .hero-fix { font-size: var(--sc-t-lg) !important; }
+    .hero-title { font-size: var(--sc-t-lg) !important; }
     .found .side { top: var(--sc-6) !important; max-height: calc(var(--split) * 1svh - var(--sc-8)); overflow: hidden; }
     .found p { font-size: var(--sc-t-sm); max-width: none; }
     .fixed p, .big-label { font-size: var(--sc-t-sm); }
@@ -149,6 +162,13 @@
   .when .role { color: var(--sc-accent); font-weight: 600; }
   .story { display: inline-block; margin-top: var(--sc-3); font-weight: 600; color: var(--light-accent); }
   .divider.in-log .count, .divider.in-log .lab { opacity: 0; }
+  .divider.in-hero .lab { opacity: 0; }
+  .divider .lab { transition: opacity var(--sc-d-base); }
+  .log--half { background: linear-gradient(90deg, var(--sc-canvas) 0 50vw, var(--light) 50vw 100%); padding: var(--sc-6) 0 var(--sc-8); }
+  .log--half .log-head, .log--half .row { grid-template-columns: 50vw 1fr; }
+  .log--half .row h3 { margin-top: 0; }
+  [id] { scroll-margin-top: 3.5rem; }
+
   @media (max-width: 760px) {
     .log { background: var(--light); padding: 0; }
     .log-head, .row { grid-template-columns: 1fr; }
@@ -156,15 +176,88 @@
     .log-r { padding: var(--sc-5) var(--sc-gutter) var(--sc-6); }
     .row .log-l p, .log-head p { max-width: none; }
     .divider.in-log { opacity: 0; }
+    .log-r:empty { display: none; }
+    .log--half { background: var(--light); }
+    .log--half .log-head, .log--half .row { grid-template-columns: 1fr; }
+    .log--half .row h3, .log--half .log-head .log-l { text-align: left; }
+    .log--half .log-head p { margin-left: 0; }
   }
+
+  /* Top menu: name, sections, resume and contact, always one tap away. */
+  .topnav { position: fixed; inset: 0 0 auto 0; z-index: calc(var(--sc-z-chrome) + 1); display: flex; justify-content: space-between; align-items: center; gap: var(--sc-4); padding: 0 var(--sc-gutter); height: 3.25rem; background: color-mix(in oklab, var(--sc-canvas) 94%, transparent); color: #e6ecee; font-size: var(--sc-t-sm); border-bottom: 1px solid color-mix(in oklab, #e6ecee 14%, transparent); }
+  .topnav a { text-decoration: none; color: inherit; }
+  .topnav a:hover { color: #f0a23a; }
+  .topnav__name { font-weight: 600; }
+  .topnav__links { display: flex; gap: var(--sc-5); }
+  .topnav a:focus-visible { outline: 3px solid #f0a23a; outline-offset: 3px; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: var(--sc-3); margin-top: var(--sc-3); }
+  .hbtn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--sc-4); border-radius: var(--sc-r-sm); border: 2px solid #f0a23a; color: #e6ecee; font-weight: 600; text-decoration: none; font-size: var(--sc-t-sm); }
+  .hbtn--solid { background: #f0a23a; color: #172630; }
+  .hbtn:hover { background: #e6ecee; border-color: #e6ecee; color: #172630; }
+  .hbtn:focus-visible { outline: 3px solid #f0a23a; outline-offset: 3px; }
+  @media (max-width: 760px) {
+    .topnav { height: 2.75rem; }
+    .side { padding-top: 0; }
+    .topnav__name { display: none; }
+    .topnav__links { gap: var(--sc-4); width: 100%; justify-content: space-between; }
+    .found .side { top: calc(var(--sc-6) + 2.75rem) !important; }
+    .hero-cta { margin-top: var(--sc-1); }
+    .hbtn { min-height: 40px; padding: 0 var(--sc-3); font-size: var(--sc-t-xs); }
+    .close .fixed .side { top: calc(var(--sc-6) + 2.75rem); }
+  }
+
+  /* About, cards, tools: the original site's layout inside the split. */
+  .log--half .log-head .log-l p { max-width: 44ch; }
+  .log--half .log-head .log-l p + p { margin-top: var(--sc-3); }
+  .col-title { font-size: var(--sc-t-lg); font-weight: 700; margin-bottom: var(--sc-3); }
+  .strengths { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sc-3); max-width: 46ch; }
+  .strengths li { font-size: var(--sc-t-sm); padding-left: var(--sc-5); position: relative; }
+  .strengths li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 8px; height: 8px; border-radius: 2px; background: var(--light-accent); }
+  .log--intro { padding: var(--sc-4) 0; }
+  .log--intro .log-r .lead-in { max-width: 44ch; color: var(--light-soft); }
+  .log--cards .log-r { max-width: none; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); gap: var(--sc-4); }
+  .card { background: #fff; border: 1px solid color-mix(in oklab, var(--light-ink) 12%, transparent); border-top: 3px solid var(--light-accent); border-radius: var(--sc-r-sm); padding: var(--sc-5); }
+  .card--past { border-top-color: var(--light-ink); }
+  .card-role { font-size: var(--sc-t-xs); font-weight: 600; color: var(--light-accent); margin: 0 0 var(--sc-1) !important; }
+  .card h3 { font-size: var(--sc-t-lg); font-weight: 700; margin: 0; }
+  .card-date { font-size: var(--sc-t-xs); color: var(--light-soft); margin: var(--sc-1) 0 var(--sc-3) !important; }
+  .card p { font-size: var(--sc-t-sm); margin: 0; }
+  .card ul { list-style: none; margin: var(--sc-3) 0 0; padding: 0; display: grid; gap: var(--sc-1); }
+  .card li { font-size: var(--sc-t-sm); padding-left: var(--sc-4); position: relative; }
+  .card li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 2px; background: var(--light-accent); }
+  .toolgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: var(--sc-5); }
+  .toolgrid h3 { font-size: var(--sc-t-base); font-weight: 700; margin-bottom: var(--sc-1); }
+  .toolgrid p { font-size: var(--sc-t-sm); color: var(--light-soft); margin: 0; }
+  .hero-certs { display: flex; flex-wrap: wrap; gap: var(--sc-2); margin: var(--sc-1) 0 0 !important; }
+  .hero-certs span { font-size: var(--sc-t-xs); border: 1px solid color-mix(in oklab, #e6ecee 28%, transparent); border-radius: 4px; padding: 2px 8px; color: #e6ecee; }
+  @media (max-width: 760px) {
+    .log--half .log-head .log-l p { margin-left: 0; max-width: none; }
+    .log--cards { background: var(--light); }
+    .cards { grid-template-columns: 1fr; }
+    .hero-certs { display: none; }
+  }
+  .fix-line--2 { border-top: 0; padding-top: 0; }
+  .lead-in b, .fix-line b { color: var(--light-accent); }
+  .card-tags { font-size: var(--sc-t-xs) !important; color: var(--light-soft); font-weight: 600; margin: var(--sc-1) 0 0 !important; }
+  .pm-tags { font-size: var(--sc-t-xs); font-weight: 600; color: var(--sc-accent); letter-spacing: 0.02em; margin: 0 !important; }
 </style>
 </head>
 <body>
 
+<nav class="topnav" aria-label="Main">
+  <a class="topnav__name" href="#top">Yosef Bayen, PMP</a>
+  <div class="topnav__links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="Yosef-Bayen-Resume.pdf" download>Resume</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
 <div class="divider" aria-hidden="true">
-  <span class="lab lab--l">Found</span>
-  <span class="lab lab--r">Fixed</span>
-  <span class="count" id="count">3 open</span>
+  <span class="lab lab--l">The problem</span>
+  <span class="lab lab--r">What I did</span>
 </div>
 
 <main id="top">
@@ -174,39 +267,78 @@
     <div data-sc-stage>
       <div class="found w46">
         <div class="side" data-sc-cue="0 1 0 0.2">
-          <h1 class="hero-name" data-sc-kinetic="lines">Yosef Bayen finds what breaks in a release pipeline</h1>
-          <p>Project manager, PMP. 7+ years across software releases, construction and IT infrastructure.</p>
+          <h1 class="hero-name" data-sc-kinetic="lines">Yosef Bayen</h1>
+          <p class="hero-title">Project Manager, PMP</p>
+          <p>7+ years delivering software releases, construction projects and IT infrastructure.</p>
+          <p class="hero-certs"><span>PMP</span><span>CAPM</span><span>AWS Certified Cloud Practitioner</span><span>Google Project Management</span></p>
+          <div class="hero-cta"><a class="hbtn hbtn--solid" href="mailto:ybayen12@gmail.com">Email me</a><a class="hbtn" href="Yosef-Bayen-Resume.pdf" download>Download resume</a><a class="hbtn" href="https://www.linkedin.com/in/yosef-bayen-pmp-3b3341198/" target="_blank" rel="noopener">LinkedIn</a></div>
         </div>
       </div>
       <div class="fixed">
         <div class="side" data-sc-cue="0 1 0 0.2">
-          <p class="hero-fix">and builds the fix.</p>
+          <p class="hero-fix">I plan and deliver projects end to end, across software releases, construction builds and IT installations.</p>
           <div class="facts">
-            <div><strong>12</strong>enterprise clients</div>
-            <div><strong>7</strong>regulated U.S. and Canadian markets</div>
-            <div><strong>~1,000</strong>planned go-lives a year</div>
-            <div><strong>24</strong>automations built</div>
+            <div><strong>7+</strong>years in project management</div>
+            <div><strong>3</strong>industries: software, construction, IT</div>
+            <div><strong>~1,000</strong>planned launches a year</div>
+            <div><strong>$2M–$5M</strong>active construction budgets</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+
+  <!-- About: the original site's profile block, in the hero's 50/50 split. -->
+  <section class="log log--half" id="about" data-sc-act="flow" aria-labelledby="about-h">
+    <div class="log-head">
+      <div class="log-l"><h2 id="about-h">About</h2>
+        <p>I've managed projects for 7+ years in three settings: software releases, construction, and IT and AV installations.</p>
+        <p>Today, at Games Global, I run release delivery for 12 enterprise clients in 7 regulated U.S. and Canadian markets. I plan the work, run the sprint meetings, own the team's request desk, and build the automations that take repetitive work off the team.</p>
+        <p>I usually work with 8 to 12 people per project, across development, operations, testing and outside vendors.</p>
+      </div>
+      <div class="log-r">
+        <h3 class="col-title">Core strengths</h3>
+        <ul class="strengths">
+          <li><b>Release and deployment management.</b> About 1,000 planned go-lives (launch dates) a year.</li>
+          <li><b>Agile and Waterfall delivery.</b> Sprints for an automation team; phase-by-phase reviews on construction sites.</li>
+          <li><b>Stakeholder management.</b> 8 to 12 people per project, from engineers to inspectors and vendors.</li>
+          <li><b>Budget and vendor management (construction).</b> $2M to $5M in active construction budgets, purchase orders and scopes of work.</li>
+          <li><b>Risk management and change approval.</b> Risk and issue logs, change approvals, and safety and building-code rules.</li>
+          <li><b>Intake management and capacity planning.</b> Redesigned how requests come in and plan the team's workload monthly.</li>
+          <li><b>Data quality and stakeholder reporting.</b> Dashboards for leadership and full audits of tracking data against live systems.</li>
+          <li><b>Leading without formal authority.</b> Organized the handover of my automations to another team and led changes across several teams.</li>
+          <li><b>Process automation.</b> Built 24 scheduled Python automations that replaced manual ticket and status work.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro to the featured projects, so the split format explains itself. -->
+  <section class="log log--half log--intro" id="projects" data-sc-act="flow" aria-labelledby="feat-h">
+    <div class="log-head">
+      <div class="log-l"><h2 id="feat-h">Featured projects</h2></div>
+      <div class="log-r"><p class="lead-in">Three projects, shown side by side: the problem on the left, what I did and the result on the right. Scroll to move through them.</p></div>
+    </div>
+  </section>
+
   <!-- A2: count. Hidden failures. -->
-  <section data-sc-act="pin" data-sc-span="2.0" data-ticket aria-label="Automation health">
+  <section id="work" data-sc-act="pin" data-sc-span="2.0" data-ticket aria-label="Automation health">
     <div data-sc-stage>
       <div class="found w40">
         <div class="side" data-sc-cue="0 1 0 0.2">
-          <div class="when"><span>June 2026</span><span class="status">Open</span></div>
-          <h2 class="problem">The dashboard said healthy.</h2>
-          <p>Healthy only meant a job ran without crashing, not that it did the right thing. A scheduler was doing nothing while the dashboard stayed green.</p>
+          <div class="when"><span>June 2026</span><span class="status">Problem</span></div>
+          <p class="pm-tags">Issue containment, root cause analysis</p>
+          <h2 class="problem">The automations reported healthy while failing.</h2>
+          <p>The health check only confirmed that a job ran, not that it did the right work. One scheduling job was doing nothing while the dashboard stayed green.</p>
         </div>
       </div>
       <div class="fixed">
         <div class="side">
-          <div data-sc-cue="0.04 1 0.12 0.2"><span class="big" data-sc-count="0 350" data-sc-count-at="0.08 0.42">0</span></div>
-          <p class="big-label" data-sc-cue="0.1 1 0.12 0.2">hidden error, failure and crash entries found when I paused and audited all 16 scripts.</p>
-          <p class="fix-line" data-sc-cue="0.46 1 0.12 0.2"><b>Fixed:</b> repaired the highest-risk scripts and added a daily health check to the schedule. <a class="story" href="case-automation-suite.html">Read the full story</a></p>
+          <div data-sc-cue="0.04 1 0.12 0.2"><span class="big" data-sc-count="0 350" data-sc-count-at="0.08 0.42">350</span></div>
+          <p class="big-label" data-sc-cue="0.1 1 0.12 0.2">hidden errors, failures and crashes in the logs.</p>
+          <p class="fix-line" data-sc-cue="0.46 1 0.12 0.2"><b>Decision:</b> I paused every automation rather than let silent failures keep running, checked all 16 programs, and fixed the riskiest first.</p>
+          <p class="fix-line fix-line--2" data-sc-cue="0.58 1 0.12 0.2"><b>Result:</b> a daily health check now runs with the automations. <a class="story" href="case-automation-suite.html">Read the full story</a></p>
         </div>
       </div>
     </div>
@@ -217,22 +349,23 @@
     <div data-sc-stage>
       <div class="found w34">
         <div class="side" data-sc-cue="0 1 0 0.2">
-          <div class="when"><span>September 2026</span><span class="status">Open</span></div>
-          <h2 class="problem">The board drifted from reality.</h2>
-          <p>The automation set each item's status once, when it was created, and never refreshed it.</p>
+          <div class="when"><span>September 2026</span><span class="status">Problem</span></div>
+          <p class="pm-tags">Data quality audit, change approval</p>
+          <h2 class="problem">The team's tracking board didn't match reality.</h2>
+          <p>The automation set each item's status once, when it was created, and never updated it.</p>
         </div>
       </div>
       <div class="fixed">
         <div class="side">
-          <p class="lead-in" data-sc-cue="0.02 1 0.1 0.2">Audited every item against live ticket status.</p>
+          <p class="lead-in" data-sc-cue="0.02 1 0.1 0.2"><b>Decision:</b> I checked the whole board, not a sample, and changed nothing without approval.</p>
           <div data-sc-reveal="left" data-sc-reveal-at="0.08 0.4">
             <div class="scale">
               <strong>3,216</strong><span>items</span>
-              <strong>16,761</strong><span>sub-items</span>
+              <strong>16,761</strong><span>smaller tasks under them</span>
               <strong>699</strong><span>statuses corrected</span>
             </div>
           </div>
-          <p class="fix-line" data-sc-cue="0.48 1 0.12 0.2"><b>Fixed:</b> every correction verified live. A second review caught 114 of my own wrong writes, and I reverted them. <a class="story" href="case-board-audit.html">Read the full story</a></p>
+          <p class="fix-line" data-sc-cue="0.48 1 0.12 0.2"><b>Result:</b> 699 statuses corrected after approval. I built a second review into my own process; it caught 114 of my updates that were wrong, and I reversed them. <a class="story" href="case-board-audit.html">Read the full story</a></p>
         </div>
       </div>
     </div>
@@ -243,116 +376,75 @@
     <div data-sc-stage>
       <div class="found w30">
         <div class="side" data-sc-cue="0 1 0 0.2">
-          <div class="when"><span>Aug to Sep 2026</span><span class="status">Open</span></div>
-          <h2 class="problem">A new state market. No staging environment.</h2>
-          <p>Every game had to be in production, with a tracking record, before go-live. Then the go-live date moved.</p>
+          <div class="when"><span>Aug to Sep 2026</span><span class="status">Problem</span></div>
+          <p class="pm-tags">Go-live planning, resource scheduling</p>
+          <h2 class="problem">Launching a new regulated state, with no test system.</h2>
+          <p>Every game had to be live and tracked before launch day, with no place to rehearse. Then the launch date moved.</p>
         </div>
       </div>
       <div class="fixed">
         <div class="side">
-          <p class="tally" data-sc-cue="0.02 1 0.1 0.2"><span id="tally">0</span><small>of 65 production deployments scheduled</small></p>
-          <div class="board" id="board" data-sc-cue="0.02 1 0.1 0.2" role="img" aria-label="65 production deployments, scheduled across 4 engineers in 5 working days"></div>
-          <p class="fix-line" data-sc-cue="0.62 1 0.1 0.2"><b>Fixed:</b> scheduled across 4 engineers in 5 working days. When go-live moved, all 65 due dates were updated and verified. 31 activation tickets followed in one batch. <a class="story" href="case-market-launch.html">Read the full story</a></p>
+          <p class="tally" data-sc-cue="0.02 1 0.1 0.2"><span id="tally">65</span><small>of 65 game installs scheduled</small></p>
+          <div class="board" id="board" data-sc-cue="0.02 1 0.1 0.2" role="img" aria-label="65 game installs, scheduled across 4 engineers in 5 working days"></div>
+          <p class="board-key" data-sc-cue="0.02 1 0.1 0.2">Each square is one game install. They fill in as you scroll.</p>
+          <p class="fix-line" data-sc-cue="0.62 1 0.1 0.2"><b>Decision:</b> I set the standard every ticket followed, then planned and sequenced all 65 installs up front across 4 engineers in 5 working days.</p>
+          <p class="fix-line fix-line--2" data-sc-cue="0.72 1 0.1 0.2"><b>Result:</b> when the launch date moved, I re-planned and checked all 65 due dates. I then turned the setup into 4 reusable scripts for that market. <a class="story" href="case-market-launch.html">Read the full story</a></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Flow: the full ticket log, held in the same split. Every row is a real item. -->
-  <section class="log" id="work-log" data-sc-act="flow" aria-labelledby="log-h">
+  <!-- More projects, tools and what I bring: the original site's layout, on the light side of the split. -->
+  <section class="log log--cards" id="work-log" data-sc-act="flow" aria-labelledby="log-h">
     <div class="log-head">
-      <div class="log-l"><h2 id="log-h">The full log</h2><p>Every row is my own work at Games Global. Problem on the left, what I did and the result on the right.</p></div>
-      <div class="log-r"><p class="lead-in">Most recent first. Figures come from live system counts unless marked approximate.</p></div>
+      <div class="log-l"><h2 id="log-h">More projects</h2><p>Other work at Games Global, newest first, then earlier jobs. Numbers come from system counts unless marked approximate.</p></div>
+      <div class="log-r">
+        <div class="cards">
+          <article class="card" data-sc-in><p class="card-role">Review owner</p><h3>Weekly review of release problems</h3><p class="card-tags">Lessons learned, root cause analysis</p><p class="card-date">Oct 2026</p><p>Clients reported problems after releases, but no one looked into why. I took ownership of a weekly review and built a page to record each week's findings.</p><ul><li>14 weeks of reviews set up</li><li>All 7 problems that month re-investigated</li><li>Found one problem had lasted nine weeks, not four days</li></ul></article>
+          <article class="card" data-sc-in><p class="card-role">Author</p><h3>Backup instructions for a non-technical team</h3><p class="card-tags">Knowledge transfer, process documentation</p><p class="card-date">Oct 2026</p><p>If my automations stopped, another team had to do the work by hand. I rewrote the step-by-step guides and checked every step against the live system.</p><ul><li>7 guides rewritten</li><li>71 of 72 screenshots added</li><li>Outdated steps found and corrected</li></ul></article>
+          <article class="card" data-sc-in><p class="card-role">Analyst</p><h3>Support ticket analysis</h3><p class="card-tags">Root cause analysis, stakeholder reporting</p><p class="card-date">Sep 2026</p><p>Leadership wanted to see support tickets by client, release, cause, market and time to resolve. I analyzed the full history and built a dashboard.</p><ul><li>3,677 tickets analyzed</li><li>Median time to resolve corrected from 5.03 to 4.74 days by using the real close date</li></ul></article>
+          <article class="card" data-sc-in><p class="card-role">Investigator</p><h3>Fewer false alarms</h3><p class="card-tags">Root cause analysis, quality control</p><p class="card-date">Sep 2026</p><p>A tracking view flagged 65 games as needing attention. I checked each one, found three causes, and fixed four automations.</p><ul><li>65 flags checked, about 10 were real</li><li>4 automations fixed</li></ul></article>
+          <article class="card" data-sc-in><p class="card-role">Author</p><h3>Case for a third engineer</h3><p class="card-tags">Capacity planning, variance analysis</p><p class="card-date">Aug 2026</p><p>Was the team's backlog a planning problem or too much unplanned work? I measured both against the team's own time budget and wrote a report for leadership.</p><ul><li>Unplanned work ran at 152% of its budget</li><li>Planned work used 58% of its budget</li></ul></article>
+          <article class="card" data-sc-in><p class="card-role">Builder</p><h3>Contract commitments tracker</h3><p class="card-tags">Service-level agreement (SLA) tracking</p><p class="card-date">Aug 2026</p><p>Leadership wanted to see what each client contract promises, such as uptime and response times, without reading every contract. I built a tracker.</p><ul><li>17 contracts tracked</li><li>2 more reviewed and listed as excluded</li></ul></article>
+          <article class="card" data-sc-in><p class="card-role">Automation builder</p><h3>Stopped old versions from replacing new ones</h3><p class="card-tags">Release management, risk mitigation</p><p class="card-date">Aug 2026</p><p>When a newer update arrived while an older one was still scheduled, both stayed live. I changed the automation to cancel the older one.</p><ul><li>28 duplicate tickets found across 7 games</li><li>All 28 cancelled and checked</li></ul></article>
+          <article class="card" data-sc-in><p class="card-role">Audit owner</p><h3>Removed duplicate records</h3><p class="card-tags">Data quality audit, change approval</p><p class="card-date">Aug 2026</p><p>Some deliveries were tracked twice. I found the cause and tested a fix against every live record before removing anything.</p><ul><li>2,130 records checked</li><li>29 duplicates found, none flagged by mistake</li></ul></article>
+          <article class="card" data-sc-in><p class="card-role">Set the rules</p><h3>Fairer install scheduling</h3><p class="card-tags">Resource scheduling, process improvement</p><p class="card-date">Jul 2026</p><p>Installs were booked weeks out while engineers had free time. I set new scheduling rules and had the three scheduling automations follow them.</p><ul><li>Found records being silently skipped (223 against a limit of 200)</li><li>Limit raised to 450, with an alert</li></ul></article>
+          <article class="card" data-sc-in><p class="card-role">Automation builder</p><h3>Automatic closing of finished work</h3><p class="card-tags">Process improvement, quality control</p><p class="card-date">Jul 2026</p><p>Finished records stayed open and had to be closed by hand. I built an automation that closes them once all their tickets are done.</p><ul><li>21 records closed on the first run</li><li>170 of 520 sub-tasks closed, no errors</li></ul></article>
+          <article class="card" data-sc-in><p class="card-role">Designer and builder</p><h3>Game update automation and dashboard</h3><p class="card-tags">Process automation, monitoring and controlling</p><p class="card-date">Jun to Jul 2026</p><p>Every game update needed tickets, scheduling and status updates by hand. I built an automation that runs the whole process twice each weekday, plus a dashboard to watch it.</p><ul><li>1,220 leftover tickets cleaned up</li><li>283 tickets corrected for version details</li></ul></article>
+          <article class="card" data-sc-in><p class="card-role">Owner</p><h3>Team request desk</h3><p class="card-tags">Intake (demand) management, capacity planning</p><p class="card-date">2025 to now</p><p>Requests came in with missing details and some went to no team at all. I redesigned the intake and I run the desk today.</p><ul><li>10 guided request forms</li><li>150+ requests in a typical 90 days (approximate)</li><li>Monthly capacity planning</li></ul></article>
+          <article class="card" data-sc-in><p class="card-role">Sprint lead</p><h3>Sprint planning for the automation team</h3><p class="card-tags">Agile delivery, stakeholder reporting</p><p class="card-date">2025 to 2026</p><p>I introduced formal sprints for the automation team and ran sprints over a 3-month period, with progress dashboards and risk and issue logs for senior leadership.</p></article>
+          <article class="card card--past" data-sc-in><p class="card-role">Construction Project Manager</p><h3>Grace Roofing and Metal Sheets</h3><p class="card-tags">Vendor and procurement management, change approval, phase-gate reviews</p><p class="card-date">Jul 2021 to Jun 2023, Coral Springs, FL</p><p>Managed several construction projects at once, with $2M to $5M in active budgets.</p><ul><li>Coordinated architects, contractors, inspectors and trade vendors</li><li>Ran change approvals, risk plans and purchasing schedules</li><li>Kept every site within safety rules and building codes</li></ul></article>
+          <article class="card card--past" data-sc-in><p class="card-role">IT Project Coordinator and A/V Tech</p><h3>Primeview USA</h3><p class="card-tags">Installation coordination, logistics</p><p class="card-date">Jan 2019 to Jul 2021, Manhattan, NY</p><p>Coordinated IT and audio-visual installations for high-profile clients, from design through setup.</p><ul><li>Planned installs with the engineering team</li><li>Ran the warehouse and tracked device inventory</li></ul></article>
+        </div>
+      </div>
     </div>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Oct 2026<span class="role">Role: Review owner</span></span><h3>Nobody owned the root cause of release faults.</h3><p>Client-reported faults were counted each week, but no one investigated why they happened or how to stop a repeat.</p></div>
-      <div class="log-r"><p>I volunteered to own the weekly review and built a review page into our analysis dashboard, with one entry per week, a trend view and exports.</p><ul><li>Set up 14 weeks of review records</li><li>Re-investigated all 7 faults that month</li><li>Found one fault had run for nine weeks, not four days</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Oct 2026<span class="role">Role: Author</span></span><h3>A non-technical team had to run the process by hand if the automation failed.</h3><p>The test from leadership: could they schedule a game tomorrow if I didn't show up?</p></div>
-      <div class="log-r"><p>I rewrote the step-by-step process documents, checked every rule against the live system, and added a "before you start" box and screenshots to each.</p><ul><li>7 documents rewritten</li><li>71 of 72 screenshots in place</li><li>Several outdated rules found and corrected</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Sep 2026<span class="role">Role: Analyst and dashboard builder</span></span><h3>Leadership needed support tickets broken down.</h3><p>By client, release, root cause, market and time to resolve.</p></div>
-      <div class="log-r"><p>I analyzed the full ticket history, fixed a date-sorting error in the export, and built a multi-page dashboard that was merged into the team's shared code.</p><ul><li>3,677 tickets analyzed</li><li>Tickets placed in the product lifecycle rose from 272 to 675</li><li>Median time to resolve corrected from 5.03 to 4.74 days by using the real resolution date</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Sep 2026<span class="role">Role: Investigator and fixer</span></span><h3>The pipeline view raised false alarms.</h3><p>It flagged 65 games as needing attention. Most did not.</p></div>
-      <div class="log-r"><p>I checked all 65 against live data, traced three separate causes, and fixed four automation scripts, testing against every open item.</p><ul><li>65 flags reviewed, about 10 were real</li><li>4 scripts fixed</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Aug 2026<span class="role">Role: Author of the capacity case</span></span><h3>Was the backlog poor planning, or too much unplanned work?</h3><p>The two-engineer team needed an answer backed by data.</p></div>
-      <div class="log-r"><p>I measured planned and unplanned work against the team's own time budget, re-ran every figure against live data, and wrote a full report plus a one-page summary.</p><ul><li>Unplanned work ran at 152% of its budget</li><li>Planned work used 58% of its budget</li><li>639 manual date changes in 30 days</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Aug 2026<span class="role">Role: Builder</span></span><h3>Client service commitments were buried in contracts.</h3><p>Leadership wanted to see what each contract promises, without reading every contract by hand.</p></div>
-      <div class="log-r"><p>I built a tracker that lists each contract's uptime target, response and resolution commitments and key dates, plus a list of contracts reviewed and excluded so nothing goes missing.</p><ul><li>17 contracts tracked</li><li>2 more reviewed and listed as excluded</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Aug 2026<span class="role">Role: Automation builder</span></span><h3>Older builds could deploy after newer ones.</h3><p>When an update arrived while an older one was still scheduled, both stayed live.</p></div>
-      <div class="log-r"><p>I changed the update automation to cancel the replaced ticket and carry its date to the new one, then cleaned up the existing cases.</p><ul><li>28 duplicate tickets found across 7 games</li><li>11 were set to deploy the older build last</li><li>All 28 cancelled and verified</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Aug 2026<span class="role">Role: Audit owner</span></span><h3>Reclassified deals left duplicate records open forever.</h3><p>The same delivery was being tracked twice.</p></div>
-      <div class="log-r"><p>I found the cause in the sync automation, wrote a detection rule, and tested it against every live record before cancelling anything.</p><ul><li>2,130 records audited</li><li>29 duplicates found, zero false positives</li><li>25 records cancelled with sign-off</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Jul 2026<span class="role">Role: Set the scheduling rules</span></span><h3>Installs were booked weeks out while engineers had open time.</h3><p>One engineer was hard-coded as the assignee, and a search limit silently dropped records.</p></div>
-      <div class="log-r"><p>I set new scheduling rules (a 6-hour planned day, an 8-hour ceiling, work rotated between engineers) and reworked the three scheduling scripts to follow them.</p><ul><li>223 open records against a limit of 200</li><li>Limit raised to 450, with an alert if it's reached again</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Jul 2026<span class="role">Role: Automation builder</span></span><h3>Finished work stayed open on the board.</h3><p>Tracking records had to be closed by hand after every linked ticket was done.</p></div>
-      <div class="log-r"><p>I built an automation that moves a record forward once all its tickets are done, with a name check, then a pass that closes finished sub-items.</p><ul><li>21 records moved on the first run, each verified</li><li>520 sub-items checked, 170 closed, zero errors</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Jun to Jul 2026<span class="role">Role: Designer and builder</span></span><h3>Every game update was handled by hand.</h3><p>Each one needed tickets per market, scheduling, linking, board updates and a reply to the requester.</p></div>
-      <div class="log-r"><p>I designed and built an automation that runs the full chain twice each weekday, plus an operations console showing the pipeline, calendar, automations and alerts.</p><ul><li>Runs twice every weekday</li><li>1,220 orphaned tickets removed in the clean-up</li><li>283 open tickets corrected for version tags</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">2025 to now<span class="role">Role: Platform owner</span></span><h3>Service desk requests arrived in any shape.</h3><p>Requests were ad hoc, and tickets with no team set fell into no queue at all.</p></div>
-      <div class="log-r"><p>I redesigned intake with 10 guided request forms and automated compliance checks, and I own the platform today.</p><ul><li>150+ release requests in a typical 90 days (approximate)</li><li>A new queue found 3 tickets already stuck with no route</li><li>Monthly capacity planning</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">2025 to 2026<span class="role">Role: Sprint lead</span></span><h3>The automation team had no formal sprint process.</h3></div>
-      <div class="log-r"><p>I introduced formal sprint management and ran a dedicated 3-month sprint cycle, with KPI dashboards and RAID logs for senior leadership.</p></div>
-    </article>
 
     <div class="log-head log-head--sub">
-      <div class="log-l"><h2>Before Games Global</h2></div>
-      <div class="log-r"></div>
+      <div class="log-l"><h2>Methods and tools</h2></div>
+      <div class="log-r">
+        <div class="toolgrid">
+          <div><h3>Delivery</h3><p>Agile and Scrum, Waterfall, hybrid, sprint planning, backlog grooming, release management, go-live planning</p></div>
+          <div><h3>Planning and control</h3><p>Jira, Confluence, Microsoft Project, Azure DevOps, Monday.com, risk and issue logs, change approval, capacity planning</p></div>
+          <div><h3>Reporting</h3><p>Power BI, advanced Excel, Google Sheets, progress dashboards, leadership updates</p></div>
+          <div><h3>Automation</h3><p>Python, Jira and Monday.com connections, HTML and JavaScript dashboards, AI-assisted development</p></div>
+        </div>
+      </div>
     </div>
 
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Jul 2021 to Jun 2023</span><h3>Construction Project Manager</h3><p>Grace Roofing and Metal Sheets, Coral Springs, FL</p></div>
-      <div class="log-r"><p>I managed concurrent construction projects with $2M to $5M in active budget, using Waterfall and phase-gate methods to hold schedule and budget.</p><ul><li>Coordinated architects, general contractors, inspectors and trade vendors</li><li>Ran change control, risk plans, issue logs and procurement schedules</li><li>Reviewed scopes of work and managed purchase orders</li><li>Kept every site within OSHA rules and local building codes</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><span class="when">Jan 2019 to Jul 2021</span><h3>IT Project Coordinator and A/V Tech</h3><p>Primeview USA, Manhattan, NY</p></div>
-      <div class="log-r"><p>I coordinated IT and AV installations for high-profile clients, from design through deployment, including structured cabling and video display systems.</p><ul><li>Planned and scheduled installs with the engineering team</li><li>Ran the warehouse and device logistics, tracking inventory in Excel and Microsoft Project</li></ul></div>
-    </article>
-
-    <article class="row" data-sc-in>
-      <div class="log-l"><h3>Methods and tools</h3></div>
-      <div class="log-r tools"><p><b>Delivery:</b> Agile and Scrum, Waterfall, hybrid, sprint planning, backlog grooming, risk management and RAID logs, change control</p><p><b>Planning and reporting:</b> Jira, Confluence, Microsoft Project, Azure DevOps, Monday.com, Power BI, advanced Excel, KPI dashboards</p><p><b>Automation:</b> Python, Jira and Monday.com integrations, HTML and JavaScript dashboards, AI-assisted development</p></div>
-    </article>
+    <div class="log-head log-head--sub">
+      <div class="log-l"><h2>What I bring</h2></div>
+      <div class="log-r">
+        <div class="toolgrid toolgrid--3">
+          <div><h3>Delivery that holds</h3><p>Sprint planning, clear backlogs and tracking that the team keeps using, backed by dashboards leadership can read.</p></div>
+          <div><h3>Ownership of the work</h3><p>I run the request desk, plan capacity and fix the process myself, including the automation behind it.</p></div>
+          <div><h3>Clear communication</h3><p>8 to 12 people per project across technical and business teams, with plain updates up and down.</p></div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- A5 close: the divider sweeps away and the fixed side owns the screen. -->
-  <section class="close" data-sc-act="pin" data-sc-span="1.7" data-close aria-label="Experience and contact">
+  <section class="close" id="contact" data-sc-act="pin" data-sc-span="1.7" data-close aria-label="Experience and contact">
     <div data-sc-stage>
       <div class="found"></div>
       <div class="fixed">
@@ -364,7 +456,7 @@
               <li><span><b>Games Global</b>, Project Manager</span><span>2023 to now</span></li>
               <li><span><b>Grace Roofing and Metal Sheets</b>, Construction PM</span><span>2021 to 2023</span></li>
               <li><span><b>Primeview USA</b>, IT Project Coordinator</span><span>2019 to 2021</span></li>
-              <li><span><b>Bergen Community College</b>, A.S. Business</span><span>2018</span></li>
+              <li><span><b>Bergen Community College</b>, A.S. Business</span><span>2016 to 2018</span></li>
             </ul>
           </div>
           <div data-sc-cue="0.4">
@@ -373,11 +465,12 @@
               <li><span>PMP, Project Management Institute</span><span>Aug 2025</span></li>
               <li><span>AWS Certified Cloud Practitioner</span><span>Oct 2025</span></li>
               <li><span>CAPM, Project Management Institute</span><span>Feb 2025</span></li>
-              <li><span>Google Project Management Certificate</span><span>Jul 2024</span></li>
+              <li><span>Google Project Management Professional Certificate</span><span>Jul 2024</span></li>
             </ul>
           </div>
           <div class="ask" data-sc-cue="0.2">
             <a class="btn btn--solid" href="mailto:ybayen12@gmail.com">Email Yosef</a>
+            <a class="btn" href="Yosef-Bayen-Resume.pdf" download>Download resume</a>
             <a class="btn" href="https://www.linkedin.com/in/yosef-bayen-pmp-3b3341198/" target="_blank" rel="noopener">LinkedIn</a>
             <a class="btn" href="tel:+12016004479">+1 (201) 600-4479</a>
           </div>
@@ -401,9 +494,9 @@
     var launch = document.querySelector('[data-launch]');
     var board = document.getElementById('board');
     var tally = document.getElementById('tally');
-    var count = document.getElementById('count');
     var divider = document.querySelector('.divider');
-    var logSec = document.querySelector('.log');
+    var hero = document.querySelector('[data-sc-act]');
+    var logSecs = Array.prototype.slice.call(document.querySelectorAll('.log'));
     var small = matchMedia('(max-width: 760px)');
     var TOTAL = 65, blocks = [];
     for (var i = 0; i < TOTAL; i++) { var b = document.createElement('i'); board.appendChild(b); blocks.push(b); }
@@ -418,6 +511,7 @@
         // A ticket closes once its fix line is showing, and stays closed once passed.
         var done = p(t) > 0.55 || t.getBoundingClientRect().bottom < innerHeight * 0.5;
         t.classList.toggle('is-closed', done);
+        var st = t.querySelector('.status'); if (st) st.textContent = done ? 'Solved' : 'Problem';
         if (done) closed++;
       });
       target = 50 - 6 * closed;
@@ -426,12 +520,9 @@
       if (closeAct.getBoundingClientRect().top < innerHeight) split *= 1 - ease(Math.min(p(closeAct) / 0.28, 1));
       root.style.setProperty('--split', split.toFixed(2));
 
-      var open = tickets.length - closed;
-      var label = open ? open + ' open' : 'All closed';
-      if (label !== last) { count.textContent = label; last = label; }
       divider.classList.toggle('gone', split < 1);
-      var lr = logSec.getBoundingClientRect();
-      divider.classList.toggle('in-log', lr.top < innerHeight * 0.6 && lr.bottom > innerHeight * 0.4);
+      divider.classList.toggle('in-hero', hero.getBoundingClientRect().bottom > innerHeight * 0.5);
+      divider.classList.toggle('in-log', logSecs.some(function (el) { var r = el.getBoundingClientRect(); return r.top < innerHeight * 0.6 && r.bottom > 52; }));
       divider.style.transform = small.matches
         ? 'translate3d(0,' + (split / 100 * innerHeight).toFixed(1) + 'px,0)'
         : 'translate3d(' + (split / 100 * innerWidth).toFixed(1) + 'px,0,0)';

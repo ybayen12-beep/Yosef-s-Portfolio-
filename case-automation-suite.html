@@ -3,64 +3,110 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Deployment automation suite and silent-failure audit | Yosef Bayen</title>
-<meta name="description" content="I designed and built 24 scheduled automations for a deployment pipeline, then audited them when I found one failing quietly behind a healthy dashboard.">
+<title>Automating game updates, then catching silent failures | Yosef Bayen</title>
+<meta name="description" content="I designed and built 24 automated jobs that send game updates out to each market on a schedule, then checked them all when I found one failing quietly while the dashboard showed it as healthy.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Automating game updates | Yosef Bayen">
+<meta property="og:description" content="I designed and built 24 automated jobs that send game updates out to each market on a schedule, then checked them all when I found one failing quietly while the dashboard showed it as healthy.">
+<meta property="og:url" content="https://ybayen12-beep.github.io/Yosef-s-Portfolio-/case-automation-suite.html">
+<meta property="og:image" content="https://ybayen12-beep.github.io/Yosef-s-Portfolio-/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="case.css">
+<style>
+.sample .strip { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.9rem; }
+.sample .strip span { padding: 0.3rem 0.7rem; border-radius: 6px; background: color-mix(in oklab, var(--ink) 6%, transparent); font-weight: 600; }
+.sample tr.flag td { background: color-mix(in oklab, #a8322a 7%, transparent); }
+.sample .flag-note { display: block; font-size: 0.75rem; color: #a8322a; margin-top: 2px; }
+.factsbox{list-style:none;padding:0;margin:0 0 2rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-size:.92rem}.factsbox b{color:var(--accent)}
+</style>
 </head>
 <body>
-<header class="top"><a href="index.html">Yosef Bayen, PMP</a><a href="index.html#work-log">See more work</a></header>
+<header class="top"><a href="index.html">Yosef Bayen, PMP</a><nav class="top-links" aria-label="Main"><a href="index.html#work-log">More work</a><a href="Yosef-Bayen-Resume.pdf" download>Resume</a><a href="mailto:ybayen12@gmail.com">Email</a></nav></header>
 <main>
   <section class="case-hero">
     <div class="problem">
-      <p class="meta"><span>2025 to 2026</span><span><b>Role:</b> Project Manager, designer and builder of the automations</span><span>Games Global</span></p>
-      <h1>I automated a deployment pipeline, then made sure it told the truth</h1>
-      <p>Moving game updates out to each market meant manual ticket work for every market. Once I automated it, I found the bigger risk: a job could fail quietly while the dashboard said all was well.</p>
+      <p class="meta"><span>2025 to 2026 (audit in June 2026)</span><span><b>Role:</b> Project Manager, designer and builder of the automations</span><span>Games Global</span></p>
+      <h1>I automated how game updates reach each market, then paused it all when its health reports proved false</h1>
+      <p>I owned the move from hand-made tickets to automated ones for every market. When a job failed quietly while the dashboard said all was well, I stopped everything and checked every program.</p>
     </div>
     <div class="result">
       <div class="figures">
-        <div><strong>24</strong><span>scheduled automations designed and built</span></div>
-        <div><strong>16</strong><span>scripts audited after a silent failure</span></div>
-        <div><strong>1,220</strong><span>orphaned tickets cleaned up</span></div>
+        <div><strong>24</strong><span>automated jobs I designed and built, each running on a schedule</span></div>
+        <div><strong>16</strong><span>programs I checked after one failed without warning</span></div>
+        <div><strong>1,220</strong><span>leftover tickets with nothing linked to them, cleaned up</span></div>
         <div><strong>28</strong><span>duplicate tickets found and cancelled</span></div>
       </div>
     </div>
   </section>
+  <section class="sample" aria-labelledby="sample-h">
+    <h2 id="sample-h">What it looked like</h2>
+    <figure class="screen" role="img" aria-label="Sample control screen: totals of 24 automated jobs, 16 programs checked and what the logs showed, above a table of seven sample jobs. One job, Install scheduler, shows it ran but did not do the right thing, the kind of silent failure the audit caught.">
+      <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i><span>Automation console (sample)</span></div>
+      <div class="screen-body">
+        <div class="strip"><span>24 automated jobs</span><span>16 programs checked</span><span>Hidden in the logs: 170 errors, 165 failures, 15 crashes</span></div>
+        <table>
+          <tr><th>Job</th><th>Schedule</th><th>Last run</th><th>Ran</th><th>Did the right thing</th></tr>
+          <tr><td>Update sync</td><td>Twice each weekday</td><td>09:00</td><td><span class="chip chip--ok">yes</span></td><td><span class="chip chip--ok">yes</span></td></tr>
+          <tr class="flag"><td>Install scheduler<span class="flag-note">Silent failure: it ran without errors but did nothing. My check caught failures like this.</span></td><td>Scheduled</td><td>09:15</td><td><span class="chip chip--ok">yes</span></td><td><span class="chip chip--bad">no</span></td></tr>
+          <tr><td>Activation tickets</td><td>Scheduled</td><td>09:30</td><td><span class="chip chip--ok">yes</span></td><td><span class="chip chip--ok">yes</span></td></tr>
+          <tr><td>Close-out</td><td>Scheduled</td><td>10:00</td><td><span class="chip chip--ok">yes</span></td><td><span class="chip chip--ok">yes</span></td></tr>
+          <tr><td>Duplicate check</td><td>Scheduled</td><td>10:30</td><td><span class="chip chip--ok">yes</span></td><td><span class="chip chip--ok">yes</span></td></tr>
+          <tr><td>Service desk tagging</td><td>Three times a week</td><td>11:00</td><td><span class="chip chip--ok">yes</span></td><td><span class="chip chip--ok">yes</span></td></tr>
+          <tr><td>Daily health check</td><td>Daily</td><td>07:00</td><td><span class="chip chip--ok">yes</span></td><td><span class="chip chip--ok">yes</span></td></tr>
+        </table>
+      </div>
+    </figure>
+    <p class="sample-caption">Sample screen recreated for this page with made-up names and data. The real system is private. Totals in the text are real.</p>
+  </section>
   <article class="case-body">
-    <section><h2>The situation</h2><p>Every game update had to be turned into tickets, scheduled, linked, tracked on a project board and reported back to the person who asked for it. People did each of those steps by hand.</p></section>
-    <section><h2>My role</h2><p>I'm the Project Manager, and I also designed and built the automations myself, using AI-assisted development.</p></section>
-    <section><h2>What I did</h2><ol>
-      <li>I built 24 scheduled Python automations connected to Jira and Monday.com. They took over ticket creation, scheduling, linking, board updates, status tracking and replies to requesters.</li>
-      <li>In June 2026 I built an end-to-end game update automation that runs the full chain twice each weekday. I added a local operations console showing the pipeline, calendar, automations and alerts, with an audit trail, start-up self-checks and a read-only view. That view let a reviewing team trust the system without operating it.</li>
-      <li>In the same month I cleaned up 1,220 orphaned tickets left behind by an older built-in rule.</li>
-      <li>I then found a scheduler that did nothing while the dashboard showed it as healthy, because "healthy" only meant "ran without crashing". I paused the whole suite and audited 16 scripts. They shared three bug types: errors read as success, loose name matching, and failed work marked as done. I fixed the highest-risk scripts first and added a daily health check.</li>
-      <li>I added safeguards against duplicate tickets across 7 workflows.</li>
-      <li>In July 2026 I launched a close-out automation. Its first live run moved 21 records, and I verified each one.</li>
-      <li>In August 2026 I found 7 games with 28 duplicate tickets, 11 of them scheduled so an older build would deploy last. I cancelled all 28 and verified them. The automation now cancels the replaced ticket itself and carries its date over to the new one.</li>
-    </ol></section>
+    <ul class="factsbox">
+      <li><b>Role:</b> Project Manager, designer and builder of the automations</li>
+      <li><b>Dates:</b> 2025 to 2026 (audit in June 2026)</li>
+      <li><b>Scope:</b> 24 automated jobs across Jira and Monday.com</li>
+      <li><b>PM focus:</b> process automation, issue containment, root cause analysis, risk mitigation, quality control</li>
+    </ul>
+    <section><h2>The situation</h2><p>Game updates depended on people doing every step by hand. Each new game version had to become tickets, tasks in a tracking system, for every market. Each ticket then had to be scheduled, linked to related work, tracked on a project board and reported back to the person who asked. Automating that created a bigger risk: a job could fail quietly while the dashboard said all was well.</p></section>
+    <section><h2>What I owned: process automation</h2><p>I owned the automation of the update process, from request to close-out, and the audit that checked whether it did. I designed and built the automations myself, writing the code with help from AI tools.</p></section>
+    <section><h2>The decision: issue containment</h2><p>When I found a scheduling job doing nothing while the dashboard showed it as healthy, I paused all the automations rather than let silent failures keep running on the live pipeline. "Healthy" only meant "ran without crashing". It did not mean the job had done its work.</p><p>I also left rescheduling clashes to people rather than automate them. When two pieces of work clash, choosing which moves is a judgement call, not a rule.</p></section>
+    <section><h2>How I ran it: risk mitigation and controls</h2><ul>
+      <li><b>Built the base.</b> I built 24 automated jobs in Python, a programming language. They run on a schedule and connect to Jira, our ticket system, and Monday.com, our project board. They took over creating tickets, scheduling, linking, updating the board, tracking status and replying to the people who made requests.</li>
+      <li><b>Joined it into one flow.</b> In June 2026 I built one automation that handles every step of a game update, from start to finish. It runs twice each weekday. For monitoring and control, a control screen on my own machine shows the work in progress, the calendar, the automations and alerts. It records every action and checks itself each time it starts.</li>
+      <li><b>Set a trust control.</b> I built a view-only mode so a reviewing team could trust the system without running it.</li>
+      <li><b>Ran the audit.</b> I checked all 16 programs and, through root cause analysis, grouped the problems into three kinds of bug: errors counted as success, names matched too loosely, and failed work marked as done. I prioritized the riskiest programs and fixed them first.</li>
+      <li><b>Added safeguards.</b> I added a daily health check, and safeguards against duplicate tickets in 7 processes.</li>
+      <li><b>Cleaned up leftovers.</b> I cleaned up 1,220 leftover tickets with nothing linked to them. An older automatic rule built into the tool had left them behind.</li>
+      <li><b>Closed finished work automatically.</b> In July 2026 I launched an automation that closes out finished work. Its first real run moved 21 records, and I checked each one.</li>
+      <li><b>Fixed the cause.</b> In August 2026 I found 7 games with 28 duplicate tickets. 11 of them were scheduled in the wrong order, a release management risk: an older version of the game would go out last. I cancelled all 28 and checked them. As a process improvement, I then changed the automation so it cancels the old ticket itself and moves its date to the new one.</li>
+    </ul></section>
     <section><h2>The result</h2><ul>
-      <li>The audit surfaced 170 error lines, 165 failure lines and 15 crash traces that had been hidden in the logs.</li>
-      <li>A follow-up close-out pass checked 520 child items and closed 170, with 0 errors.</li>
+      <li>The audit surfaced 170 error messages, 165 failure messages and 15 crash reports that had been hidden in the system's logs.</li>
+      <li>1,220 leftover tickets cleaned up, and 28 duplicate tickets cancelled.</li>
+      <li>Quality control: a second close-out run checked 520 child items, smaller tasks that sit under a main item, and closed 170, with 0 errors.</li>
       <li>A daily health check now runs on the schedule alongside the automations.</li>
-      <li>One task still needs a person: rescheduling when two pieces of work clash. That's a judgement call, not a rule, so I left it with people.</li>
+      <li>Rescheduling clashes stay with people, by design.</li>
     </ul></section>
     <section><h2>How the work flowed</h2><ol class="steps">
       <li><b>Request arrives</b>An update request comes in.</li>
       <li><b>Tickets created</b>One ticket per market.</li>
       <li><b>Scheduled</b>Each ticket gets its slot.</li>
-      <li><b>Linked and tracked</b>Tickets are linked and followed on the board.</li>
+      <li><b>Linked and tracked</b>Tickets are linked to related work and followed on the project board.</li>
       <li><b>Requester updated</b>The person who asked hears back.</li>
       <li><b>Health check</b>A daily health check runs.</li>
     </ol><p class="note">Illustrative diagram, drawn for this page. Totals above are real.</p></section>
-    <section><h2>Tools</h2><p>Python, Jira, Monday.com and AI-assisted development.</p></section>
+    <section><h2>Tools</h2><p>Python, Jira, Monday.com and AI tools to help write the code.</p></section>
   </article>
 </main>
 <footer class="next">
   <h2>Want the full story?</h2>
   <div class="links">
     <a class="btn btn--solid" href="mailto:ybayen12@gmail.com">Email Yosef</a>
+    <a class="btn" href="Yosef-Bayen-Resume.pdf" download>Download resume</a>
     <a class="btn" href="index.html#work-log">See more work</a>
   </div>
 </footer>
