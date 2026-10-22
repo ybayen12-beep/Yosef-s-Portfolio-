@@ -257,6 +257,7 @@
   .fbtn.is-on { background: var(--light-ink); color: var(--light); }
   .fbtn:focus-visible { outline: 3px solid var(--light-accent); outline-offset: 2px; }
   .card[hidden] { display: none; }
+  .close-line { grid-column: 1 / -1; font-size: var(--sc-t-lg); color: var(--light-soft); max-width: 52ch; margin: 0 !important; }
 </style>
 </head>
 <body>
@@ -573,30 +574,13 @@
   </section>
 
   <!-- A5 close: the divider sweeps away and the fixed side owns the screen. -->
-  <section class="close" id="contact" data-sc-act="pin" data-sc-span="1.7" data-close aria-label="Experience and contact">
+  <section class="close" id="contact" data-sc-act="pin" data-sc-span="1.7" data-close aria-label="Contact">
     <div data-sc-stage>
       <div class="found"></div>
       <div class="fixed">
         <div class="side">
           <h2 data-sc-cue="0.3">Open to project and program management roles.</h2>
-          <div data-sc-cue="0.36">
-            <p class="col-h">Experience</p>
-            <ul class="roles">
-              <li><span><b>Games Global</b>, Project Manager</span><span>2023 to now</span></li>
-              <li><span><b>Grace Roofing and Metal Sheets</b>, Construction PM</span><span>2021 to 2023</span></li>
-              <li><span><b>Primeview USA</b>, IT Project Coordinator</span><span>2019 to 2021</span></li>
-              <li><span><b>Bergen Community College</b>, A.S. Business</span><span>2016 to 2018</span></li>
-            </ul>
-          </div>
-          <div data-sc-cue="0.4">
-            <p class="col-h">Certifications</p>
-            <ul class="certs">
-              <li><span>PMP, Project Management Institute</span><span>Aug 2025</span></li>
-              <li><span>AWS Certified Cloud Practitioner</span><span>Oct 2025</span></li>
-              <li><span>CAPM, Project Management Institute</span><span>Feb 2025</span></li>
-              <li><span>Google Project Management Professional Certificate</span><span>Jul 2024</span></li>
-            </ul>
-          </div>
+          <p class="close-line" data-sc-cue="0.32">PMP-certified project manager with 7+ years across software releases, construction and IT installations.</p>
           <div class="ask" data-sc-cue="0.2">
             <a class="btn btn--solid" href="mailto:ybayen12@gmail.com">Email Yosef</a>
             <a class="btn" href="Yosef-Bayen-Resume.pdf" download>Download resume</a>
