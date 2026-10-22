@@ -42,7 +42,7 @@
   }
   .side { position: absolute; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: var(--sc-4); }
   .found .side { left: var(--sc-gutter); width: calc(var(--w, 28vw) - var(--sc-gutter) - var(--sc-6)); }
-  .w46 { --w: 46vw; } .w40 { --w: 40vw; } .w34 { --w: 34vw; } .w30 { --w: 30vw; }
+  .w46 { --w: 46vw; } .w40 { --w: 40vw; } .w34 { --w: 34vw; } .w30 { --w: 30vw; } .w26 { --w: 26vw; }
   .fixed .side { left: calc(52vw + var(--sc-6)); right: var(--sc-gutter); max-width: 40rem; }
 
   .when { font-size: var(--sc-t-sm); color: var(--sc-ink-soft); display: flex; gap: var(--sc-3); align-items: center; }
@@ -142,8 +142,8 @@
   }
 
   /* The full log keeps the split: problem column on the dark ground, fix column on the light. */
-  .log { position: relative; z-index: 2; padding: var(--sc-8) 0 var(--sc-9); background: linear-gradient(90deg, var(--sc-canvas) 0 32vw, var(--light) 32vw 100%); }
-  .log-head, .row { display: grid; grid-template-columns: 32vw 1fr; }
+  .log { position: relative; z-index: 2; padding: var(--sc-8) 0 var(--sc-9); background: linear-gradient(90deg, var(--sc-canvas) 0 30vw, var(--light) 30vw 100%); }
+  .log-head, .row { display: grid; grid-template-columns: 30vw 1fr; }
   .log-l { padding: var(--sc-6) var(--sc-7) var(--sc-6) var(--sc-gutter); color: var(--sc-ink); }
   .log-r { padding: var(--sc-6) var(--sc-gutter) var(--sc-6) var(--sc-7); color: var(--light-ink); --sc-ink: var(--light-ink); --sc-ink-soft: var(--light-soft); max-width: 52rem; }
   .log-head h2 { font-size: var(--sc-t-2xl); font-weight: 800; }
@@ -242,6 +242,8 @@
   .card-tags { font-size: var(--sc-t-xs) !important; color: var(--light-soft); font-weight: 600; margin: var(--sc-1) 0 0 !important; }
   .pm-tags { font-size: var(--sc-t-xs); font-weight: 600; color: var(--sc-accent); letter-spacing: 0.02em; margin: 0 !important; }
   .card-link { margin-top: var(--sc-3) !important; }
+  .big--sm { font-size: clamp(3rem, 1.6rem + 6vw, 7rem); }
+  .scale--words strong { font-size: clamp(1.8rem, 1rem + 2.6vw, 3.2rem); }
 </style>
 </head>
 <body>
@@ -319,7 +321,7 @@
   <section class="log log--half log--intro" id="projects" data-sc-act="flow" aria-labelledby="feat-h">
     <div class="log-head">
       <div class="log-l"><h2 id="feat-h">Featured projects</h2></div>
-      <div class="log-r"><p class="lead-in">Three projects, shown side by side: the problem on the left, what I did and the result on the right. Scroll to move through them.</p></div>
+      <div class="log-r"><p class="lead-in">Five projects from all three of my jobs, shown side by side: the problem on the left, what I did and the result on the right. Scroll to move through them.</p></div>
     </div>
   </section>
 
@@ -328,7 +330,7 @@
     <div data-sc-stage>
       <div class="found w40">
         <div class="side" data-sc-cue="0 1 0 0.2">
-          <div class="when"><span>June 2026</span><span class="status">Problem</span></div>
+          <div class="when"><span>Games Global, June 2026</span><span class="status">Problem</span></div>
           <p class="pm-tags">Issue containment, root cause analysis</p>
           <h2 class="problem">The automations reported healthy while failing.</h2>
           <p>The health check only confirmed that a job ran, not that it did the right work. One scheduling job was doing nothing while the dashboard stayed green.</p>
@@ -350,7 +352,7 @@
     <div data-sc-stage>
       <div class="found w34">
         <div class="side" data-sc-cue="0 1 0 0.2">
-          <div class="when"><span>September 2026</span><span class="status">Problem</span></div>
+          <div class="when"><span>Games Global, September 2026</span><span class="status">Problem</span></div>
           <p class="pm-tags">Data quality audit, change approval</p>
           <h2 class="problem">The team's tracking board didn't match reality.</h2>
           <p>The automation set each item's status once, when it was created, and never updated it.</p>
@@ -377,7 +379,7 @@
     <div data-sc-stage>
       <div class="found w30">
         <div class="side" data-sc-cue="0 1 0 0.2">
-          <div class="when"><span>Aug to Sep 2026</span><span class="status">Problem</span></div>
+          <div class="when"><span>Games Global, Aug to Sep 2026</span><span class="status">Problem</span></div>
           <p class="pm-tags">Go-live planning, resource scheduling</p>
           <h2 class="problem">Launching a new regulated state, with no test system.</h2>
           <p>Every game had to be live and tracked before launch day, with no place to rehearse. Then the launch date moved.</p>
@@ -390,6 +392,58 @@
           <p class="board-key" data-sc-cue="0.02 1 0.1 0.2">Each square is one game install. They fill in as you scroll.</p>
           <p class="fix-line" data-sc-cue="0.62 1 0.1 0.2"><b>Decision:</b> I set the standard every ticket followed, then planned and sequenced all 65 installs up front across 4 engineers in 5 working days.</p>
           <p class="fix-line fix-line--2" data-sc-cue="0.72 1 0.1 0.2"><b>Result:</b> when the launch date moved, I re-planned and checked all 65 due dates. I then turned the setup into 4 reusable scripts for that market. <a class="story" href="case-market-launch.html">Read the full story</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Grace Roofing: FDOT program. -->
+  <section data-sc-act="pin" data-sc-span="2.0" data-ticket aria-label="FDOT roofing program">
+    <div data-sc-stage>
+      <div class="found w30">
+        <div class="side" data-sc-cue="0 1 0 0.2">
+          <div class="when"><span>Grace Roofing and Metal Sheets, 2021 to 2023</span><span class="status">Problem</span></div>
+          <p class="pm-tags">Program planning, permitting, procurement</p>
+          <h2 class="problem">One roofing program, many towns, one budget.</h2>
+          <p>FDOT needed commercial roofing at several sites, each with its own permit office, inspections and access rules, all running at the same time.</p>
+        </div>
+      </div>
+      <div class="fixed">
+        <div class="side">
+          <div data-sc-cue="0.04 1 0.12 0.2"><span class="big big--sm">$2M&ndash;$5M</span></div>
+          <p class="big-label" data-sc-cue="0.1 1 0.12 0.2">FDOT commercial roofing program across multiple locations, about 6 to 8 months.</p>
+          <p class="fix-line" data-sc-cue="0.46 1 0.12 0.2"><b>Decision:</b> I sequenced sites by readiness rather than starting them all at once. A site went into production only when its permit, materials and crew were in place.</p>
+          <p class="fix-line fix-line--2" data-sc-cue="0.58 1 0.12 0.2"><b>Result:</b> permits, procurement, crews and subcontractors ran under one plan and one budget, with OSHA and local codes followed at every site. <a class="story" href="case-roofing-program.html">Read the full story</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Primeview: factory-to-site installations. -->
+  <section data-sc-act="pin" data-sc-span="2.0" data-ticket aria-label="AV installation coordination">
+    <div data-sc-stage>
+      <div class="found w26">
+        <div class="side" data-sc-cue="0 1 0 0.2">
+          <div class="when"><span>Primeview USA, 2019 to 2021</span><span class="status">Problem</span></div>
+          <p class="pm-tags">Logistics, dependency management</p>
+          <h2 class="problem">Every install depended on five handoffs.</h2>
+          <p>Factory, delivery, engineer travel, site readiness and building security all had to line up on the same day.</p>
+        </div>
+      </div>
+      <div class="fixed">
+        <div class="side">
+          <div data-sc-reveal="left" data-sc-reveal-at="0.06 0.4">
+            <div class="scale scale--words">
+              <strong>Factory</strong><span>ship dates tracked</span>
+              <strong>Delivery</strong><span>materials scheduled to site</span>
+              <strong>Travel</strong><span>engineer flights booked</span>
+              <strong>Readiness</strong><span>site dependencies closed</span>
+              <strong>Access</strong><span>security cleared</span>
+            </div>
+          </div>
+          <p class="fix-line" data-sc-cue="0.46 1 0.12 0.2"><b>Decision:</b> I confirmed each site was ready before releasing equipment or booking travel, rather than flying crews in on the original date.</p>
+          <p class="fix-line fix-line--2" data-sc-cue="0.58 1 0.12 0.2"><b>Result:</b> video display, cabling and integration installs for high-profile clients, coordinated from design through deployment. <a class="story" href="case-av-deployment.html">Read the full story</a></p>
         </div>
       </div>
     </div>
@@ -515,7 +569,7 @@
         var st = t.querySelector('.status'); if (st) st.textContent = done ? 'Solved' : 'Problem';
         if (done) closed++;
       });
-      target = 50 - 6 * closed;
+      target = 50 - 4 * closed;
       cur += (target - cur) * 0.12;
       var split = cur;
       if (closeAct.getBoundingClientRect().top < innerHeight) split *= 1 - ease(Math.min(p(closeAct) / 0.28, 1));
