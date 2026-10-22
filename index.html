@@ -8,8 +8,8 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Yosef Bayen | Project Manager, PMP">
 <meta property="og:description" content="Yosef Bayen, PMP. Project manager for software release delivery in regulated markets, with 7+ years of experience.">
-<meta property="og:url" content="https://ybayen12-beep.github.io/Yosef-s-Portfolio-/">
-<meta property="og:image" content="https://ybayen12-beep.github.io/Yosef-s-Portfolio-/og.png">
+<meta property="og:url" content="https://ybayen12-beep.github.io/">
+<meta property="og:image" content="https://ybayen12-beep.github.io/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -244,6 +244,19 @@
   .card-link { margin-top: var(--sc-3) !important; }
   .big--sm { font-size: clamp(3rem, 1.6rem + 6vw, 7rem); }
   .scale--words strong { font-size: clamp(1.8rem, 1rem + 2.6vw, 3.2rem); }
+  .pillars { display: grid; gap: var(--sc-5); max-width: 52rem; }
+  .pillar { background: #fff; border: 1px solid color-mix(in oklab, var(--light-ink) 12%, transparent); border-left: 3px solid var(--light-accent); border-radius: var(--sc-r-sm); padding: var(--sc-5); }
+  .pillar h3 { font-size: var(--sc-t-lg); font-weight: 700; margin: 0 0 var(--sc-2); }
+  .pillar p { font-size: var(--sc-t-sm); margin: 0; }
+  .edu { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--light-ink); max-width: 46rem; }
+  .edu li { display: flex; justify-content: space-between; gap: var(--sc-5); padding: var(--sc-3) 0; border-bottom: 1px solid color-mix(in oklab, var(--light-ink) 16%, transparent); font-size: var(--sc-t-sm); }
+  .edu li span:last-child { color: var(--light-soft); white-space: nowrap; }
+  .edu-h { margin-top: var(--sc-6) !important; }
+  .filters { display: flex; flex-wrap: wrap; gap: var(--sc-2); margin-bottom: var(--sc-5); }
+  .fbtn { font: inherit; font-size: var(--sc-t-sm); font-weight: 600; padding: 6px 14px; min-height: 40px; border-radius: 999px; border: 1.5px solid var(--light-ink); background: transparent; color: var(--light-ink); cursor: pointer; }
+  .fbtn.is-on { background: var(--light-ink); color: var(--light); }
+  .fbtn:focus-visible { outline: 3px solid var(--light-accent); outline-offset: 2px; }
+  .card[hidden] { display: none; }
 </style>
 </head>
 <body>
@@ -253,6 +266,7 @@
   <div class="topnav__links">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
     <a href="Yosef-Bayen-Resume.pdf" download>Resume</a>
     <a href="#contact">Contact</a>
   </div>
@@ -313,6 +327,30 @@
           <li><b>Leading without formal authority.</b> Organized the handover of my automations to another team and led changes across several teams.</li>
           <li><b>Process automation.</b> Built 24 scheduled Python automations that replaced manual ticket and status work.</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- What I do: three pillars, each with the numbers behind it. -->
+  <section class="log log--half" id="what-i-do" data-sc-act="flow" aria-labelledby="do-h">
+    <div class="log-head">
+      <div class="log-l"><h2 id="do-h">What I do</h2><p>Three kinds of work, across all three of my jobs.</p></div>
+      <div class="log-r">
+        <div class="pillars">
+          <article class="pillar" data-sc-in>
+            <h3>Release and delivery management</h3>
+            <p>I manage release delivery for 12 enterprise clients across 7 regulated U.S. and Canadian markets: about 1,000 planned go-lives a year across 346 products. For a new state launch, I sequenced 65 production installs across 4 engineers in 5 working days.</p>
+          </article>
+          <article class="pillar" data-sc-in>
+            <h3>Process automation and data quality</h3>
+            <p>I designed and built 24 scheduled Python automations that replaced manual ticket and status work, then audited them: 16 scripts checked, 350 hidden errors found, a daily health check added. I also audited 3,216 tracking items and corrected 699 statuses after approval.</p>
+          </article>
+          <article class="pillar" data-sc-in>
+            <h3>Construction and field projects</h3>
+            <p>Before software, I managed a $2M to $5M multi-location roofing program for the Florida Department of Transportation over about 6 to 8 months, and coordinated factory-to-site IT and AV installations for high-profile clients.</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -449,27 +487,73 @@
     </div>
   </section>
 
+  <!-- Experience and education: every job, in the original site's order. -->
+  <section class="log" id="experience" data-sc-act="flow" aria-labelledby="exp-h">
+    <div class="log-head">
+      <div class="log-l"><h2 id="exp-h">Experience</h2><p>Every role, newest first.</p></div>
+      <div class="log-r"></div>
+    </div>
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">June 2023 to now</span><h3>Project Manager</h3><p>Games Global, Boca Raton, FL</p></div>
+      <div class="log-r"><p>I manage software release delivery for 12 enterprise clients across 7 regulated U.S. and Canadian markets, about 1,000 planned go-lives a year across 346 products. I led go-live planning for a new state market, designed and built 24 scheduled Python automations, ran a data quality audit of 3,216 tracking items, redesigned the team's request desk with guided forms and automated compliance checks, and introduced sprint management for the automation team.</p></div>
+    </article>
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">July 2021 to June 2023</span><h3>Construction Project Manager</h3><p>Grace Roofing and Metal Sheets, Coral Springs, FL</p></div>
+      <div class="log-r"><p>I managed concurrent construction projects with $2M to $5M in active budget, including a multi-location roofing program for the Florida Department of Transportation. I ran permits for each town, procurement and purchase orders, subcontractors and our own crew, with Waterfall planning, phase-gate reviews, change approvals, and OSHA and building code compliance.</p></div>
+    </article>
+    <article class="row" data-sc-in>
+      <div class="log-l"><span class="when">January 2019 to July 2021</span><h3>IT Project Coordinator and A/V Tech</h3><p>Primeview USA, Manhattan, NY</p></div>
+      <div class="log-r"><p>I coordinated IT and AV installations for high-profile clients, including structured cabling, video display systems and technical integrations, from design through deployment. I worked with our factories on delivery, booked engineer travel, confirmed site readiness and security access, and ran the warehouse and device logistics.</p></div>
+    </article>
+
+    <div class="log-head log-head--sub">
+      <div class="log-l"><h2>Education</h2></div>
+      <div class="log-r">
+        <ul class="edu">
+          <li><span><b>Associate of Science, Business</b><br>Bergen Community College, Paramus, NJ</span><span>2016 to 2018</span></li>
+        </ul>
+        <h3 class="col-title edu-h">Certifications</h3>
+        <ul class="edu">
+          <li><span><b>PMP, Project Management Professional</b><br>Project Management Institute</span><span>Aug 2025</span></li>
+          <li><span><b>AWS Certified Cloud Practitioner</b><br>Amazon Web Services</span><span>Oct 2025</span></li>
+          <li><span><b>CAPM, Certified Associate in Project Management</b><br>Project Management Institute</span><span>Feb 2025</span></li>
+          <li><span><b>Google Project Management Professional Certificate</b><br>Coursera</span><span>Jul 2024</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- More projects, tools and what I bring: the original site's layout, on the light side of the split. -->
   <section class="log log--cards" id="work-log" data-sc-act="flow" aria-labelledby="log-h">
     <div class="log-head">
       <div class="log-l"><h2 id="log-h">More projects</h2><p>Other work at Games Global, newest first, then earlier jobs. Numbers come from system counts unless marked approximate.</p></div>
       <div class="log-r">
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button type="button" class="fbtn is-on" data-f="all" aria-pressed="true">All</button>
+          <button type="button" class="fbtn" data-f="release" aria-pressed="false">Release</button>
+          <button type="button" class="fbtn" data-f="automation" aria-pressed="false">Automation</button>
+          <button type="button" class="fbtn" data-f="reporting" aria-pressed="false">Data and reporting</button>
+          <button type="button" class="fbtn" data-f="planning" aria-pressed="false">Planning</button>
+          <button type="button" class="fbtn" data-f="process" aria-pressed="false">Process</button>
+          <button type="button" class="fbtn" data-f="construction" aria-pressed="false">Construction</button>
+          <button type="button" class="fbtn" data-f="field" aria-pressed="false">IT and AV</button>
+        </div>
         <div class="cards">
-          <article class="card" data-sc-in><p class="card-role">Review owner</p><h3>Weekly review of release problems</h3><p class="card-tags">Lessons learned, root cause analysis</p><p class="card-date">Oct 2026</p><p>Clients reported problems after releases, but no one looked into why. I took ownership of a weekly review and built a page to record each week's findings.</p><ul><li>14 weeks of reviews set up</li><li>All 7 problems that month re-investigated</li><li>Found one problem had lasted nine weeks, not four days</li></ul></article>
-          <article class="card" data-sc-in><p class="card-role">Author</p><h3>Backup instructions for a non-technical team</h3><p class="card-tags">Knowledge transfer, process documentation</p><p class="card-date">Oct 2026</p><p>If my automations stopped, another team had to do the work by hand. I rewrote the step-by-step guides and checked every step against the live system.</p><ul><li>7 guides rewritten</li><li>71 of 72 screenshots added</li><li>Outdated steps found and corrected</li></ul></article>
-          <article class="card" data-sc-in><p class="card-role">Analyst</p><h3>Support ticket analysis</h3><p class="card-tags">Root cause analysis, stakeholder reporting</p><p class="card-date">Sep 2026</p><p>Leadership wanted to see support tickets by client, release, cause, market and time to resolve. I analyzed the full history and built a dashboard.</p><ul><li>3,677 tickets analyzed</li><li>Median time to resolve corrected from 5.03 to 4.74 days by using the real close date</li></ul></article>
-          <article class="card" data-sc-in><p class="card-role">Investigator</p><h3>Fewer false alarms</h3><p class="card-tags">Root cause analysis, quality control</p><p class="card-date">Sep 2026</p><p>A tracking view flagged 65 games as needing attention. I checked each one, found three causes, and fixed four automations.</p><ul><li>65 flags checked, about 10 were real</li><li>4 automations fixed</li></ul></article>
-          <article class="card" data-sc-in><p class="card-role">Author</p><h3>Case for a third engineer</h3><p class="card-tags">Capacity planning, variance analysis</p><p class="card-date">Aug 2026</p><p>Was the team's backlog a planning problem or too much unplanned work? I measured both against the team's own time budget and wrote a report for leadership.</p><ul><li>Unplanned work ran at 152% of its budget</li><li>Planned work used 58% of its budget</li></ul></article>
-          <article class="card" data-sc-in><p class="card-role">Builder</p><h3>Contract commitments tracker</h3><p class="card-tags">Service-level agreement (SLA) tracking</p><p class="card-date">Aug 2026</p><p>Leadership wanted to see what each client contract promises, such as uptime and response times, without reading every contract. I built a tracker.</p><ul><li>17 contracts tracked</li><li>2 more reviewed and listed as excluded</li></ul></article>
-          <article class="card" data-sc-in><p class="card-role">Automation builder</p><h3>Stopped old versions from replacing new ones</h3><p class="card-tags">Release management, risk mitigation</p><p class="card-date">Aug 2026</p><p>When a newer update arrived while an older one was still scheduled, both stayed live. I changed the automation to cancel the older one.</p><ul><li>28 duplicate tickets found across 7 games</li><li>All 28 cancelled and checked</li></ul></article>
-          <article class="card" data-sc-in><p class="card-role">Audit owner</p><h3>Removed duplicate records</h3><p class="card-tags">Data quality audit, change approval</p><p class="card-date">Aug 2026</p><p>Some deliveries were tracked twice. I found the cause and tested a fix against every live record before removing anything.</p><ul><li>2,130 records checked</li><li>29 duplicates found, none flagged by mistake</li></ul></article>
-          <article class="card" data-sc-in><p class="card-role">Set the rules</p><h3>Fairer install scheduling</h3><p class="card-tags">Resource scheduling, process improvement</p><p class="card-date">Jul 2026</p><p>Installs were booked weeks out while engineers had free time. I set new scheduling rules and had the three scheduling automations follow them.</p><ul><li>Found records being silently skipped (223 against a limit of 200)</li><li>Limit raised to 450, with an alert</li></ul></article>
-          <article class="card" data-sc-in><p class="card-role">Automation builder</p><h3>Automatic closing of finished work</h3><p class="card-tags">Process improvement, quality control</p><p class="card-date">Jul 2026</p><p>Finished records stayed open and had to be closed by hand. I built an automation that closes them once all their tickets are done.</p><ul><li>21 records closed on the first run</li><li>170 of 520 sub-tasks closed, no errors</li></ul></article>
-          <article class="card" data-sc-in><p class="card-role">Designer and builder</p><h3>Game update automation and dashboard</h3><p class="card-tags">Process automation, monitoring and controlling</p><p class="card-date">Jun to Jul 2026</p><p>Every game update needed tickets, scheduling and status updates by hand. I built an automation that runs the whole process twice each weekday, plus a dashboard to watch it.</p><ul><li>1,220 leftover tickets cleaned up</li><li>283 tickets corrected for version details</li></ul></article>
-          <article class="card" data-sc-in><p class="card-role">Owner</p><h3>Team request desk</h3><p class="card-tags">Intake (demand) management, capacity planning</p><p class="card-date">2025 to now</p><p>Requests came in with missing details and some went to no team at all. I redesigned the intake with guided forms and automated compliance checks, and I run the desk today.</p><ul><li>10 guided request forms</li><li>150+ requests in a typical 90 days (approximate)</li><li>Monthly capacity planning</li></ul></article>
-          <article class="card" data-sc-in><p class="card-role">Sprint lead</p><h3>Sprint planning for the automation team</h3><p class="card-tags">Agile delivery, stakeholder reporting</p><p class="card-date">2025 to 2026</p><p>I introduced formal sprints for the automation team and ran sprints over a 3-month period, with progress dashboards and risk and issue logs for senior leadership.</p></article>
-          <article class="card card--past" data-sc-in><p class="card-role">Construction Project Manager</p><h3>Grace Roofing and Metal Sheets</h3><p class="card-tags">Vendor and procurement management, change approval, phase-gate reviews</p><p class="card-date">Jul 2021 to Jun 2023, Coral Springs, FL</p><p>Managed a $2M to $5M multi-location commercial roofing program for the Florida Department of Transportation (FDOT), over about 6 to 8 months.</p><ul><li>Coordinated architects, contractors, inspectors and trade vendors</li><li>Ran change approvals, risk plans and purchasing schedules</li><li>Kept every site within safety rules and building codes</li></ul><p class="card-link"><a class="story" href="case-roofing-program.html">Read the project story</a></p></article>
-          <article class="card card--past" data-sc-in><p class="card-role">IT Project Coordinator and A/V Tech</p><h3>Primeview USA</h3><p class="card-tags">Installation coordination, logistics</p><p class="card-date">Jan 2019 to Jul 2021, Manhattan, NY</p><p>Coordinated IT and audio-visual installations for high-profile clients, from design through setup.</p><ul><li>Planned installs with the engineering team</li><li>Ran the warehouse and tracked device inventory</li></ul><p class="card-link"><a class="story" href="case-av-deployment.html">Read the project story</a></p></article>
+          <article class="card" data-sc-in data-cat="reporting"><p class="card-role">Review owner</p><h3>Weekly review of release problems</h3><p class="card-tags">Lessons learned, root cause analysis</p><p class="card-date">Oct 2026</p><p>Clients reported problems after releases, but no one looked into why. I took ownership of a weekly review and built a page to record each week's findings.</p><ul><li>14 weeks of reviews set up</li><li>All 7 problems that month re-investigated</li><li>Found one problem had lasted nine weeks, not four days</li></ul></article>
+          <article class="card" data-sc-in data-cat="process"><p class="card-role">Author</p><h3>Backup instructions for a non-technical team</h3><p class="card-tags">Knowledge transfer, process documentation</p><p class="card-date">Oct 2026</p><p>If my automations stopped, another team had to do the work by hand. I rewrote the step-by-step guides and checked every step against the live system.</p><ul><li>7 guides rewritten</li><li>71 of 72 screenshots added</li><li>Outdated steps found and corrected</li></ul></article>
+          <article class="card" data-sc-in data-cat="reporting"><p class="card-role">Analyst</p><h3>Support ticket analysis</h3><p class="card-tags">Root cause analysis, stakeholder reporting</p><p class="card-date">Sep 2026</p><p>Leadership wanted to see support tickets by client, release, cause, market and time to resolve. I analyzed the full history and built a dashboard.</p><ul><li>3,677 tickets analyzed</li><li>Median time to resolve corrected from 5.03 to 4.74 days by using the real close date</li></ul></article>
+          <article class="card" data-sc-in data-cat="automation"><p class="card-role">Investigator</p><h3>Fewer false alarms</h3><p class="card-tags">Root cause analysis, quality control</p><p class="card-date">Sep 2026</p><p>A tracking view flagged 65 games as needing attention. I checked each one, found three causes, and fixed four automations.</p><ul><li>65 flags checked, about 10 were real</li><li>4 automations fixed</li></ul></article>
+          <article class="card" data-sc-in data-cat="planning"><p class="card-role">Author</p><h3>Case for a third engineer</h3><p class="card-tags">Capacity planning, variance analysis</p><p class="card-date">Aug 2026</p><p>Was the team's backlog a planning problem or too much unplanned work? I measured both against the team's own time budget and wrote a report for leadership.</p><ul><li>Unplanned work ran at 152% of its budget</li><li>Planned work used 58% of its budget</li></ul></article>
+          <article class="card" data-sc-in data-cat="reporting"><p class="card-role">Builder</p><h3>Contract commitments tracker</h3><p class="card-tags">Service-level agreement (SLA) tracking</p><p class="card-date">Aug 2026</p><p>Leadership wanted to see what each client contract promises, such as uptime and response times, without reading every contract. I built a tracker.</p><ul><li>17 contracts tracked</li><li>2 more reviewed and listed as excluded</li></ul></article>
+          <article class="card" data-sc-in data-cat="release"><p class="card-role">Automation builder</p><h3>Stopped old versions from replacing new ones</h3><p class="card-tags">Release management, risk mitigation</p><p class="card-date">Aug 2026</p><p>When a newer update arrived while an older one was still scheduled, both stayed live. I changed the automation to cancel the older one.</p><ul><li>28 duplicate tickets found across 7 games</li><li>All 28 cancelled and checked</li></ul></article>
+          <article class="card" data-sc-in data-cat="reporting"><p class="card-role">Audit owner</p><h3>Removed duplicate records</h3><p class="card-tags">Data quality audit, change approval</p><p class="card-date">Aug 2026</p><p>Some deliveries were tracked twice. I found the cause and tested a fix against every live record before removing anything.</p><ul><li>2,130 records checked</li><li>29 duplicates found, none flagged by mistake</li></ul></article>
+          <article class="card" data-sc-in data-cat="planning"><p class="card-role">Set the rules</p><h3>Fairer install scheduling</h3><p class="card-tags">Resource scheduling, process improvement</p><p class="card-date">Jul 2026</p><p>Installs were booked weeks out while engineers had free time. I set new scheduling rules and had the three scheduling automations follow them.</p><ul><li>Found records being silently skipped (223 against a limit of 200)</li><li>Limit raised to 450, with an alert</li></ul></article>
+          <article class="card" data-sc-in data-cat="automation"><p class="card-role">Automation builder</p><h3>Automatic closing of finished work</h3><p class="card-tags">Process improvement, quality control</p><p class="card-date">Jul 2026</p><p>Finished records stayed open and had to be closed by hand. I built an automation that closes them once all their tickets are done.</p><ul><li>21 records closed on the first run</li><li>170 of 520 sub-tasks closed, no errors</li></ul></article>
+          <article class="card" data-sc-in data-cat="automation"><p class="card-role">Designer and builder</p><h3>Game update automation and dashboard</h3><p class="card-tags">Process automation, monitoring and controlling</p><p class="card-date">Jun to Jul 2026</p><p>Every game update needed tickets, scheduling and status updates by hand. I built an automation that runs the whole process twice each weekday, plus a dashboard to watch it.</p><ul><li>1,220 leftover tickets cleaned up</li><li>283 tickets corrected for version details</li></ul></article>
+          <article class="card" data-sc-in data-cat="process"><p class="card-role">Owner</p><h3>Team request desk</h3><p class="card-tags">Intake (demand) management, capacity planning</p><p class="card-date">2025 to now</p><p>Requests came in with missing details and some went to no team at all. I redesigned the intake with guided forms and automated compliance checks, and I run the desk today.</p><ul><li>10 guided request forms</li><li>150+ requests in a typical 90 days (approximate)</li><li>Monthly capacity planning</li></ul></article>
+          <article class="card" data-sc-in data-cat="planning"><p class="card-role">Sprint lead</p><h3>Sprint planning for the automation team</h3><p class="card-tags">Agile delivery, stakeholder reporting</p><p class="card-date">2025 to 2026</p><p>I introduced formal sprints for the automation team and ran sprints over a 3-month period, with progress dashboards and risk and issue logs for senior leadership.</p></article>
+          <article class="card card--past" data-sc-in data-cat="construction"><p class="card-role">Construction Project Manager</p><h3>Grace Roofing and Metal Sheets</h3><p class="card-tags">Vendor and procurement management, change approval, phase-gate reviews</p><p class="card-date">Jul 2021 to Jun 2023, Coral Springs, FL</p><p>Managed a $2M to $5M multi-location commercial roofing program for the Florida Department of Transportation (FDOT), over about 6 to 8 months.</p><ul><li>Coordinated architects, contractors, inspectors and trade vendors</li><li>Ran change approvals, risk plans and purchasing schedules</li><li>Kept every site within safety rules and building codes</li></ul><p class="card-link"><a class="story" href="case-roofing-program.html">Read the project story</a></p></article>
+          <article class="card card--past" data-sc-in data-cat="field"><p class="card-role">IT Project Coordinator and A/V Tech</p><h3>Primeview USA</h3><p class="card-tags">Installation coordination, logistics</p><p class="card-date">Jan 2019 to Jul 2021, Manhattan, NY</p><p>Coordinated IT and audio-visual installations for high-profile clients, from design through setup.</p><ul><li>Planned installs with the engineering team</li><li>Ran the warehouse and tracked device inventory</li></ul><p class="card-link"><a class="story" href="case-av-deployment.html">Read the project story</a></p></article>
         </div>
       </div>
     </div>
@@ -486,16 +570,6 @@
       </div>
     </div>
 
-    <div class="log-head log-head--sub">
-      <div class="log-l"><h2>What I bring</h2></div>
-      <div class="log-r">
-        <div class="toolgrid toolgrid--3">
-          <div><h3>Delivery that holds</h3><p>Sprint planning, clear backlogs and tracking that the team keeps using, backed by dashboards leadership can read.</p></div>
-          <div><h3>Ownership of the work</h3><p>I run the request desk, plan capacity and fix the process myself, including the automation behind it.</p></div>
-          <div><h3>Clear communication</h3><p>8 to 12 people per project across technical and business teams, with plain updates up and down.</p></div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- A5 close: the divider sweeps away and the fixed side owns the screen. -->
@@ -593,6 +667,19 @@
       requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
+  })();
+
+  // Project filter: show only cards in the chosen category.
+  (function () {
+    var btns = Array.prototype.slice.call(document.querySelectorAll('.fbtn'));
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.card[data-cat]'));
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var f = b.getAttribute('data-f');
+        btns.forEach(function (x) { var on = x === b; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+        cards.forEach(function (c) { c.hidden = !(f === 'all' || c.getAttribute('data-cat') === f); });
+      });
+    });
   })();
 </script>
 </body>
